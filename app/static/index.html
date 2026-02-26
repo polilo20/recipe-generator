@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Générateur de recettes</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: #f5f5f0;
+    color: #333;
+    padding-bottom: 140px;
+  }
+  header {
+    background: #2d5016;
+    color: white;
+    padding: 1.2rem 1.5rem;
+    text-align: center;
+  }
+  header h1 { font-size: 1.5rem; font-weight: 600; }
+  header p { font-size: 0.85rem; opacity: 0.8; margin-top: 0.3rem; }
+
+  #categories { padding: 1rem 1.5rem; }
+
+  .category { margin-bottom: 1.2rem; }
+  .category h2 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #2d5016;
+    margin-bottom: 0.5rem;
+    border-bottom: 2px solid #2d5016;
+    padding-bottom: 0.25rem;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .chip {
+    display: inline-block;
+    padding: 0.3rem 0.65rem;
+    border-radius: 999px;
+    border: 1.5px solid #bbb;
+    background: white;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: all 0.15s;
+    user-select: none;
+  }
+  .chip:hover { border-color: #2d5016; }
+  .chip.selected { background: #2d5016; color: white; border-color: #2d5016; }
+
+  /* Bottom bar */
+  #bottom-bar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: white;
+    border-top: 2px solid #2d5016;
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 10;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+  }
+  #selection-summary {
+    flex: 1;
+    font-size: 0.85rem;
+    color: #555;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  #selection-summary strong { color: #2d5016; }
+  #btn-generate {
+    background: #2d5016;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: opacity 0.15s;
+  }
+  #btn-generate:hover { opacity: 0.85; }
+  #btn-generate:disabled { opacity: 0.4; cursor: not-allowed; }
+  #btn-clear {
+    background: none;
+    border: 1.5px solid #999;
+    color: #666;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  #btn-clear:hover { border-color: #c00; color: #c00; }
+
+  /* Modal */
+  #modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 100;
+    overflow-y: auto;
+    padding: 2rem 1rem;
+  }
+  #modal-overlay.visible {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  #modal {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem 1.5rem 2rem;
+    width: 100%;
+    max-width: 640px;
+    position: relative;
+  }
+  #modal-close {
+    position: absolute;
+    top: 0.9rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+    color: #888;
+  }
+  #modal-close:hover { color: #333; }
+  #modal h2 {
+    font-size: 1.1rem;
+    color: #2d5016;
+    margin-bottom: 1rem;
+    padding-right: 2rem;
+  }
+  #result-box { font-size: 0.9rem; line-height: 1.6; }
+  #result-box h3 { font-size: 1rem; color: #2d5016; margin: 1rem 0 0.3rem; }
+  #result-box h3:first-child { margin-top: 0; }
+  #result-box p { margin: 0.35rem 0; }
+  #result-box ul, #result-box ol { margin: 0.35rem 0 0.35rem 1.2rem; padding: 0; }
+  #result-box li { margin: 0.15rem 0; }
+
+  .spinner {
+    display: inline-block;
+    width: 18px; height: 18px;
+    border: 2.5px solid #ccc;
+    border-top-color: #2d5016;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Générateur de recettes</h1>
+  <p>Sélectionnez vos ingrédients, puis générez une recette originale</p>
+</header>
+
+<div id="categories"></div>
+
+<div id="modal-overlay">
+  <div id="modal">
+    <button id="modal-close">&times;</button>
+    <h2>Recette générée</h2>
+    <div id="result-box"></div>
+  </div>
+</div>
+
+<div id="bottom-bar">
+  <div id="selection-summary">Aucun ingrédient sélectionné</div>
+  <button id="btn-clear">Effacer</button>
+  <button id="btn-generate" disabled>Générer</button>
+</div>
+
+<script>
+// Minimal markdown renderer: handles headers, bold, italic, lists
+function renderMarkdown(text) {
+  const lines = text.split('\n');
+  let html = '';
+  let inList = false;
+
+  for (const raw of lines) {
+    const line = raw.trimEnd();
+    if (/^### /.test(line)) {
+      if (inList) { html += '</ul>'; inList = false; }
+      html += `<h3>${esc(line.slice(4))}</h3>`;
+    } else if (/^## /.test(line)) {
+      if (inList) { html += '</ul>'; inList = false; }
+      html += `<h3>${esc(line.slice(3))}</h3>`;
+    } else if (/^# /.test(line)) {
+      if (inList) { html += '</ul>'; inList = false; }
+      html += `<h3>${esc(line.slice(2))}</h3>`;
+    } else if (/^[-*] /.test(line)) {
+      if (!inList) { html += '<ul>'; inList = true; }
+      html += `<li>${fmt(line.slice(2))}</li>`;
+    } else if (/^\d+\. /.test(line)) {
+      if (inList) { html += '</ul>'; inList = false; }
+      html += `<p>${fmt(line)}</p>`;
+    } else if (line === '') {
+      if (inList) { html += '</ul>'; inList = false; }
+    } else {
+      if (inList) { html += '</ul>'; inList = false; }
+      html += `<p>${fmt(line)}</p>`;
+    }
+  }
+  if (inList) html += '</ul>';
+  return html;
+}
+
+function esc(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+function fmt(s) {
+  return esc(s)
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>');
+}
+
+// Map<display, canonical>
+const selected = new Map();
+
+async function loadIngredients() {
+  const resp = await fetch("/api/ingredients");
+  const data = await resp.json();
+  const container = document.getElementById("categories");
+
+  for (const [category, ingredients] of Object.entries(data)) {
+    const section = document.createElement("div");
+    section.className = "category";
+
+    const h2 = document.createElement("h2");
+    h2.textContent = category;
+    section.appendChild(h2);
+
+    const chipsDiv = document.createElement("div");
+    chipsDiv.className = "chips";
+
+    for (const ing of ingredients) {
+      const chip = document.createElement("span");
+      chip.className = "chip";
+      if (ing.display !== ing.canonical) chip.classList.add("variant");
+      chip.dataset.display = ing.display;
+      chip.dataset.canonical = ing.canonical;
+      chip.textContent = ing.display;
+      chip.addEventListener("click", () => toggleChip(chip));
+      chipsDiv.appendChild(chip);
+    }
+
+    section.appendChild(chipsDiv);
+    container.appendChild(section);
+  }
+}
+
+function toggleChip(chip) {
+  const display = chip.dataset.display;
+  if (selected.has(display)) {
+    selected.delete(display);
+    chip.classList.remove("selected");
+  } else {
+    selected.set(display, chip.dataset.canonical);
+    chip.classList.add("selected");
+  }
+  updateSummary();
+}
+
+function updateSummary() {
+  const summary = document.getElementById("selection-summary");
+  const btn = document.getElementById("btn-generate");
+  if (selected.size === 0) {
+    summary.innerHTML = "Aucun ingrédient sélectionné";
+    btn.disabled = true;
+  } else {
+    const list = [...selected.keys()].join(", ");
+    summary.innerHTML = "<strong>" + selected.size + " ingrédient" +
+      (selected.size > 1 ? "s" : "") + " :</strong> " + list;
+    btn.disabled = false;
+  }
+}
+
+function openModal() {
+  document.getElementById("modal-overlay").classList.add("visible");
+  document.getElementById("modal-overlay").scrollTop = 0;
+}
+
+function closeModal() {
+  document.getElementById("modal-overlay").classList.remove("visible");
+}
+
+document.getElementById("modal-close").addEventListener("click", closeModal);
+document.getElementById("modal-overlay").addEventListener("click", e => {
+  if (e.target === document.getElementById("modal-overlay")) closeModal();
+});
+
+document.getElementById("btn-clear").addEventListener("click", () => {
+  selected.clear();
+  document.querySelectorAll(".chip.selected").forEach(c => c.classList.remove("selected"));
+  updateSummary();
+  closeModal();
+});
+
+document.getElementById("btn-generate").addEventListener("click", async () => {
+  const btn = document.getElementById("btn-generate");
+  const resultBox = document.getElementById("result-box");
+
+  btn.disabled = true;
+  btn.textContent = "Génération...";
+  resultBox.innerHTML = '<span class="spinner"></span> Génération en cours, veuillez patienter...';
+  openModal();
+
+  const ingredients = [...selected.entries()].map(([display, canonical]) => ({display, canonical}));
+
+  try {
+    const resp = await fetch("/api/generate", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ingredients }),
+    });
+    const data = await resp.json();
+    if (data.error) {
+      resultBox.textContent = "Erreur : " + data.error;
+    } else {
+      resultBox.innerHTML = renderMarkdown(data.recipe);
+    }
+  } catch (err) {
+    resultBox.textContent = "Erreur réseau : " + err.message;
+  } finally {
+    btn.disabled = false;
+    btn.textContent = "Générer";
+  }
+});
+
+loadIngredients();
+</script>
+</body>
+</html>

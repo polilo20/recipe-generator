@@ -1,0 +1,26 @@
+# Secrets
+.env
+
+# Generated data — intermediate pipeline outputs, not needed in repo
+data/raw/
+data/processed/
+data/extracted/
+data/extracted_ollama_7b/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# Claude Code
+.claude/
+
+# OS
+.DS_Store

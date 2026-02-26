@@ -1,0 +1,22 @@
+{
+  "sites": [
+    {
+      "name": "aufilduthym",
+      "url": "https://aufilduthym.fr/category/recettes",
+      "max_recipes": 50,
+      "enabled": true
+    },
+    {
+      "name": "clemfoodie",
+      "url": "https://clemfoodie.com",
+      "max_recipes": 50,
+      "enabled": true
+    },
+    {
+      "name": "cestmafournee",
+      "url": "https://www.cestmafournee.com/2011/10/le-sale.html",
+      "max_recipes": 50,
+      "enabled": true
+    }
+  ]
+}
