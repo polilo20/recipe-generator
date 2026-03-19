@@ -72,11 +72,11 @@ def main():
     # Sort the map alphabetically
     sorted_map = dict(sorted(existing_map.items()))
 
-    with open(INGREDIENTS_MAP_PATH, "w", encoding="utf-8") as f:
-        json.dump(sorted_map, f, ensure_ascii=False, indent=2)
-        f.write("\n")
+    # with open(INGREDIENTS_MAP_PATH, "w", encoding="utf-8") as f:
+    #     json.dump(sorted_map, f, ensure_ascii=False, indent=2)
+    #     f.write("\n")
 
-    print(f"\nUpdated {INGREDIENTS_MAP_PATH}: {len(sorted_map)} canonical ingredients")
+    # print(f"\nUpdated {INGREDIENTS_MAP_PATH}: {len(sorted_map)} canonical ingredients")
 
 
 if __name__ == "__main__":
