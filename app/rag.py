@@ -1,7 +1,7 @@
 """
 RAG pipeline for recipe generation.
 
-1. Retrieval: select recipes whose normalized ingredients overlap with user-chosen ingredients.
+1. Retrieval: select recipes whose normalized ingredients overlap significantly with user-chosen ingredients.
 2. Generation: feed matched recipes' cleaned_content to the Mistral API
    and ask it to create a new recipe starring the user's ingredients.
 """
@@ -20,139 +20,6 @@ MISTRAL_API_MODEL = "mistral-small-latest"
 
 DATA_PATH = Path(__file__).resolve().parent.parent / "data" / "recipes_normalized.json"
 INGREDIENTS_MAP_PATH = Path(__file__).resolve().parent.parent / "processing" / "ingredients_map.json"
-INGREDIENTS_DISPLAY_PATH = Path(__file__).resolve().parent.parent / "processing" / "ingredients_display.json"
-
-# ---------------------------------------------------------------------------
-# Ingredient categories
-# ---------------------------------------------------------------------------
-
-CATEGORIES: dict[str, list[str]] = {
-    "Légumes": [
-        "artichaut", "asperge", "aubergine", "betterave", "betterave jaune",
-        "blette", "brocoli", "butternut", "carotte", "chou", "chou blanc",
-        "chou chinois", "chou de bruxelles", "chou kale", "chou rouge",
-        "chou-fleur", "concombre", "courgette", "courge", "céleri",
-        "céleri rave", "endive", "fenouil", "haricot vert", "navet",
-        "oignon", "oignon blanc", "oignon doux", "oignon jaune",
-        "oignon nouveau", "oignon rouge", "petit pois", "poireau",
-        "poivron", "pomme de terre", "patate douce", "potimarron",
-        "potiron", "radis", "radis noir", "tomate", "tomate cerise",
-        "tomate séchée", "épinard", "chicorée rouge", "cébette",
-        "échalote", "fanes de légumes", "mâche", "mesclun", "roquette",
-        "salade",
-        "champignon", "champignon de paris", "champignon des bois",
-    ],
-    "Fruits": [
-        "abricot", "ananas", "avocat", "banane", "cerise", "clémentine",
-        "coing", "datte", "figue", "fraise", "framboise", "fruit de la passion",
-        "fruits rouges", "grenade", "groseille", "kaki", "kiwi", "mangue",
-        "melon", "mirabelle", "nectarine", "orange", "orange sanguine",
-        "pamplemousse", "pastèque", "poire", "pomme", "prune", "pêche",
-        "raisin", "rhubarbe", "citron", "citron confit", "citron vert",
-        "baies noires",
-    ],
-    "Viandes & Poissons": [
-        "agneau", "anchois", "boeuf", "boeuf hâché", "cabillaud", "chorizo",
-        "crevette", "gambas", "jambon cru", "jambon cuit", "langoustine",
-        "lard fumé", "noix de saint-jacques", "oeuf de saumon/truite",
-        "saucisse", "saumon", "saumon fumé", "thon", "volaille",
-    ],
-    "Produits laitiers": [
-        "beaufort", "bleu", "beurre", "beurre clarifié", "beurre demi-sel",
-        "burrata", "crème fleurette", "crème fraîche", "crème liquide",
-        "emmental", "faisselle", "feta", "fromage blanc", "fromage de brebis",
-        "fromage de chèvre", "fromage de vache", "fromage frais",
-        "fromage râpé", "gorgonzola", "gruyère", "halloumi", "mascarpone",
-        "mozzarella", "parmesan", "pecorino", "petit suisse", "ricotta",
-        "roquefort", "skyr", "yaourt", "yaourt de brebis", "yaourt grec",
-        "lait", "lait concentré sucré", "lait en poudre", "lait fermenté",
-    ],
-    "Féculents & Céréales": [
-        "boulghour", "cannelloni", "flocon de céréale", "linguine",
-        "macaroni", "nouilles", "pain", "pain de mie", "pain pita",
-        "petit épeautre", "petites pâtes de blé/sarrasin dur", "polenta",
-        "pâtes", "quinoa", "riz", "riz basmati", "riz risotto", "sarrasin",
-        "semoule", "spaghetti",
-    ],
-    "Légumineuses": [
-        "flageolet", "fève", "haricot blanc", "haricot rouge",
-        "lentille beluga", "lentille corail", "lentille verte",
-        "légumineuses anciennes", "pois cassé", "pois chiche",
-    ],
-    "Herbes": [
-        "ail des ours", "aneth", "basilic", "bouquet garni", "cerfeuil",
-        "ciboulette", "coriandre", "estragon", "herbes de provence",
-        "lavande", "menthe", "origan", "persil", "romarin", "sauge",
-        "thym", "verveine",
-    ],
-    "Épices & Condiments": [
-        "ail", "ail en poudre", "badiane", "baies roses", "cannelle",
-        "cardamome", "citronnelle", "clou de girofle", "concentré de tomate",
-        "coriandre en poudre", "cornichon", "cumin", "curcuma", "curry",
-        "câpre", "fleur de sel", "gingembre", "gingembre en poudre",
-        "graine de moutarde", "harissa", "miso", "moutarde",
-        "moutarde à l'ancienne", "muscade", "olive noire", "olive verte",
-        "paprika", "paprika fumé", "piment", "piment d'espelette",
-        "piment de cayenne", "poivre", "purée de tomates", "quatre-épices",
-        "ras el hanout", "safran", "sauce soja", "sel", "tabasco",
-        "tahini", "tomate concassée", "tomate pelée", "zaatar",
-        "épices pour pain d'épices",
-    ],
-    "Huiles & Matières grasses": [
-        "huile d'olive", "huile de coco", "huile de noix", "huile de sésame",
-        "huile neutre", "margarine", "mayonnaise",
-    ],
-    "Fruits secs & Graines": [
-        "amande", "amande effilée", "amande en poudre", "beurre de cacahuète",
-        "cacahuète", "graine de courge", "graine de lin", "graine de pavot",
-        "graine de sésame", "graine de tournesol", "noisette",
-        "noisette en poudre", "noix", "noix de cajou", "noix de coco",
-        "noix de pécan", "pignon de pin", "pistache", "pistache en poudre",
-        "raisin sec", "éclat de pistache",
-    ],
-    "Sucres & Pâtisserie": [
-        "agar-agar", "arôme amande amère", "arôme fleur d'oranger",
-        "arôme vanille", "beurre de cacao", "bicarbonate", "biscuit à la cuillère",
-        "cacao en poudre", "café", "caramel", "cassonade", "chapelure",
-        "chocolat au lait", "chocolat blanc", "chocolat noir", "colorant alimentaire",
-        "confiture", "crème de marrons", "crêpes dentelles",
-        "farine", "farine d'amande", "farine de blé t45", "farine de blé t55",
-        "farine de blé t65", "farine de blé t80", "farine de châtaigne",
-        "farine de coco", "farine de petit épeautre", "farine de pois chiche",
-        "farine de sarrasin", "farine de seigle", "farine de teff",
-        "feuille de gélatine", "fève tonka", "fécule de pomme de terre",
-        "gousse de vanille", "lait de coco", "lait végétal",
-        "levure boulangère", "levure chimique", "maizena",
-        "marmelade d'orange", "miel", "mélasse", "pâte brisée",
-        "pâte d'amande", "pâte de pistache", "pâte feuilletée", "pâte filo",
-        "pâte à tartiner", "pectine", "poudre à crème", "praliné",
-        "psyllium", "pépites de chocolat", "sablé", "sirop d'érable",
-        "sirop sucrant", "sucre", "sucre complet", "sucre de coco",
-        "sucre glace", "sucre inverti", "sucre vanillé", "vanille",
-        "éclat de fève de cacao",
-    ],
-    "Alcools & Vinaigres": [
-        "bière", "crémant", "eau de vie", "kirsch", "rhum", "vin blanc",
-        "crème de balsamique", "vinaigre balsamique", "vinaigre blanc",
-        "vinaigre de cidre", "vinaigre de riz", "vinaigre de vin",
-        "vinaigre de xérès",
-    ],
-    "Autres": [
-        "bouillon de légumes", "bouillon de volaille", "eau",
-        "feuille de laurier", "tofu",
-    ],
-}
-
-# Build reverse lookup: canonical ingredient → category
-_INGREDIENT_TO_CATEGORY: dict[str, str] = {
-    ing: cat
-    for cat, ingredients in CATEGORIES.items()
-    for ing in ingredients
-}
-
-
-def get_category(canonical: str) -> str:
-    return _INGREDIENT_TO_CATEGORY.get(canonical, "Autres")
 
 GENERATION_PROMPT = """\
 Tu es un chef cuisinier.
@@ -161,7 +28,7 @@ Tu dois faire une recette contenant ces ingrédients : {star_ingredients}
 
 Première étape : prends connaissance de {star_ingredients} et de {ingredients_map} et comprends quels sont les ingrédients que tu peux utiliser de façon interchangeable. 
 
-Seconde étape : prends connaissance des recettes suivantes. Comprends leur style et leur intention : 
+Seconde étape : prends connaissance des recettes suivantes. La première recette est la plus pertinente. Comprends leur style et leur intention : 
 
 {matched_recipes}
 
@@ -190,54 +57,50 @@ def load_recipes(path: Path = DATA_PATH) -> list[dict]:
     with open(path, encoding="utf-8") as f:
         return json.load(f)
 
-
-def load_ingredient_list(path: Path = INGREDIENTS_MAP_PATH) -> list[str]:
-    """Return sorted list of canonical ingredient names from the map."""
+def load_ingredients_data(path: Path = INGREDIENTS_MAP_PATH) -> dict:
+    """Load ingredient data from the ingredients map JSON."""
     with open(path, encoding="utf-8") as f:
-        grouped = json.load(f)
-    return sorted(grouped.keys())
-
-
-def load_display_ingredients(path: Path = INGREDIENTS_DISPLAY_PATH) -> tuple[list[str], dict[str, str]]:
-    """Load the display dict and build a flat list + reverse mapping.
-
-    Returns:
-        display_list: sorted flat list of all user-visible ingredient names
-            (canonical keys + their display variants)
-        display_to_canonical: maps every display name to its canonical key
-    """
-    with open(path, encoding="utf-8") as f:
-        display_map = json.load(f)
-
-    display_to_canonical: dict[str, str] = {}
-    for canonical, variants in display_map.items():
-        display_to_canonical[canonical] = canonical
-        for v in variants:
-            display_to_canonical[v] = canonical
-    display_list = sorted(display_to_canonical.keys())
-    return display_list, display_to_canonical
+        return json.load(f)
 
 
 # ---------------------------------------------------------------------------
 # Retrieval
 # ---------------------------------------------------------------------------
 
- 
+def score(recipe: dict, ingredients: list[str], ingredients_data: dict) -> float:
+    """Compute a score from 0 to 1 reflecting how significantly the recipe overlaps
+    with the chosen ingredients, weighted by ingredient importance.
 
-def retrieve(recipes: list[dict], chosen_ingredients: list[str]) -> list[dict]:
-    """Return recipes that contain at least one of the chosen ingredients,
-    sorted by number of shared ingredients (most relevant first).
+    Recipes with many ingredients are naturally penalized (larger denominator).
+    """
+    weight_map = {"base": 1, "flavoring": 2, "main": 3}
+
+    chosen = set(ingredients)
+    recipe_ingredients = set(recipe["extracted"].get("ingredients_normalises", []))
+
+    overlap = recipe_ingredients & chosen
+
+    def ingredient_weight(ing: str) -> int:
+        return weight_map.get(ingredients_data.get(ing, {}).get("weight", "base"), 1)
+
+    total_recipe_weight = sum(ingredient_weight(ing) for ing in recipe_ingredients)
+    if total_recipe_weight == 0:
+        return 0.0
+
+    overlap_weight = sum(ingredient_weight(ing) for ing in overlap)
+    return overlap_weight / total_recipe_weight
+
+
+def retrieve(recipes: list[dict], chosen_ingredients: list[str], ingredients_data: dict, cutoff: float = 0.3) -> list[dict]:
+    """Return all recipes with a score above the cutoff.
 
     Expects recipes with already-normalized ingredients_normalises (canonical names).
     """
-    chosen = set(chosen_ingredients)
-
     matched = []
     for r in recipes:
-        recipe_ingredients = set(r["extracted"].get("ingredients_normalises", []))
-        overlap = len(recipe_ingredients & chosen)
-        if overlap > 0:
-            matched.append((overlap, r))
+        s = score(r, chosen_ingredients, ingredients_data)
+        if s >= cutoff:
+            matched.append((s, r))
 
     matched.sort(key=lambda x: x[0], reverse=True)
     return [r for _, r in matched]
@@ -247,7 +110,7 @@ def retrieve(recipes: list[dict], chosen_ingredients: list[str]) -> list[dict]:
 # Generation
 # ---------------------------------------------------------------------------
 
-def _build_recipes_block(recipes: list[dict], max_recipes: int = 10) -> str:
+def _build_recipes_block(recipes: list[dict], max_recipes: int = 5) -> str:
     """Format recipe cleaned_content for the prompt (kept for reference/baseline)."""
     # Should ingredients be outlined here ?
     parts = []
@@ -257,7 +120,7 @@ def _build_recipes_block(recipes: list[dict], max_recipes: int = 10) -> str:
     return "\n".join(parts)
 
 
-def _call_mistral(prompt: str, temperature: float = 0.4, max_tokens: int = 2048) -> str:
+def _call_mistral(prompt: str, temperature: float = 0.1, max_tokens: int = 2048) -> str:
     """Low-level Mistral API call."""
     api_key = os.environ.get("MISTRAL_API_KEY")
     if not api_key:
@@ -276,16 +139,20 @@ def _call_mistral(prompt: str, temperature: float = 0.4, max_tokens: int = 2048)
     return resp.json()["choices"][0]["message"]["content"]
 
 
-def generate(chosen_ingredients: list[str], matched_recipes: list[dict], ingredients_map: dict | None = None) -> str:
+def generate(chosen_ingredients: list[str], matched_recipes: list[dict], ingredients_data: dict) -> str:
     """Generate a recipe grounded in corpus ingredients with LLM-chosen technique."""
-    if ingredients_map is None:
-        with open(INGREDIENTS_MAP_PATH, encoding="utf-8") as f:
-            ingredients_map = json.load(f)
+
+    # Only pass synonyms for chosen ingredients — the full map is too noisy for the LLM
+    synonyms = {
+        ing: ingredients_data[ing]["normalizing"]
+        for ing in chosen_ingredients
+        if ing in ingredients_data
+    }
 
     prompt = GENERATION_PROMPT.format(
         star_ingredients=", ".join(chosen_ingredients),
         matched_recipes=_build_recipes_block(matched_recipes),
-        ingredients_map=json.dumps(ingredients_map, ensure_ascii=False),
+        ingredients_map=json.dumps(synonyms, ensure_ascii=False),
     )
     return _call_mistral(prompt, temperature=0.1, max_tokens=2048)
 
@@ -309,7 +176,8 @@ def main():
     parser.parse_args()
 
     recipes = load_recipes()
-    display_list, display_to_canonical = load_display_ingredients()
+    ingredients_data = load_ingredients_data()
+    display_list = list(ingredients_data.keys())
 
     print("=== Ingrédients disponibles ===")
     for i, ing in enumerate(display_list, 1):
@@ -328,20 +196,14 @@ def main():
         print("Aucun ingrédient valide.")
         return
 
-    # Map user choices to canonical names for retrieval
-    chosen = list({display_to_canonical[s] for s in selected})
-    print(f"\nIngrédients choisis : {', '.join(selected)}")
-    if selected != chosen:
-        print(f"  -> normalisés pour la recherche : {', '.join(chosen)}")
-
     # --- Retrieval ---
-    matched = retrieve(recipes, chosen)
+    matched = retrieve(recipes, selected, ingredients_data)
     print(f"Recettes trouvées : {len(matched)}")
     for r in matched:
         print(f"  - {r['extracted'].get('titre', r.get('original_title', '?'))}")
 
     if not matched:
-        print("Aucune recette trouvée pour ces ingrédients.")
+        print("Aucune recette pertinente trouvée pour ces ingrédients.")
         return
 
     # --- Show all recipes fed to the LLM ---
@@ -353,7 +215,7 @@ def main():
     print(f"\n{'='*60}")
     print(f"Génération avec Mistral API...")
     print(f"{'='*60}")
-    result = generate(selected, matched)
+    result = generate(selected, matched, ingredients_data)
     print(f"\n{'='*60}")
     print("RECETTE GÉNÉRÉE")
     print(f"{'='*60}")

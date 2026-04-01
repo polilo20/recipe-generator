@@ -62,5 +62,42 @@ python -m processing.normalize_ingredients
 
 | File | Description |
 |------|-------------|
-| `ingredients_map.json` | Canonical ingredient names → list of display variants. Manually curated. |
-| `ingredients_display.json` | Canonical names → display variants shown in the web UI chips. |
+| `ingredients_map.json` | Single source of truth for all ingredient metadata. Manually curated. |
+
+`ingredients_display.json` is no longer used — its role has been merged into `ingredients_map.json`.
+
+## `ingredients_map.json` structure
+
+Each entry is a canonical ingredient name (the key shown to users in the UI) mapped to an object with three fields:
+
+```json
+"lentille corail": {
+  "also retrieved": ["lentilles corail", "lentilles roses"],
+  "category": "Légumineuses",
+  "weight": "main"
+}
+```
+
+### `also retrieved`
+List of surface variants that should resolve to this canonical name during retrieval (e.g. plurals, common misspellings, LLM inconsistencies). Used by `normalize_ingredients.py` to map raw extracted ingredient names to their canonical form.
+
+### `category`
+UI display category, used to group ingredient chips in the web interface. Categories are **manually assigned** — see `app/rag.py` for the full list. When adding a new ingredient, pick the closest existing category.
+
+### `weight`
+Retrieval weight for the RAG pipeline. Three values:
+
+| Value | Meaning | Examples |
+|-------|---------|---------|
+| `"base"` | Structural, neutral — provides the canvas but doesn't define the dish | flour, pasta, butter, eggs, sugar, milk, bouillon |
+| `"flavoring"` | Pantry staple that adds character — you likely have it on hand, but it shapes the style rather than naming the dish | garlic, spices, herbs, alcohol, vinegar, cheese, nuts, olive oil, chocolate chips |
+| `"main"` | The star — its presence names or defines the dish | meat, fish, vegetables, fresh fruit, legumes, chocolate (as a main component) |
+
+**Rationale:** retrieval ranks recipes by ingredient overlap. Without weighting, a recipe matching on "sel + poivre + farine" scores as high as one matching on "saumon + épinard". `weight` lets the pipeline prioritise matches on `main` ingredients and treat `base`/`flavoring` matches as secondary signals.
+
+**Edge cases to keep in mind:**
+- Cheeses are `flavoring` — they add character but the dish is rarely *called* a cheese dish in the same way it's called a salmon dish. Exception: if you add a dedicated "cheese board" category one day, revisit.
+- Citrus (lemon, lime) is `flavoring` — it seasons and brightens, but a tarte au citron is defined by the lemon *as flavoring* the cream, not as a raw fruit.
+- Specialty flours (sarrasin, châtaigne) are `flavoring` — they carry a distinct regional identity that defines the recipe type (galettes bretonnes, etc.), unlike neutral white flour.
+- Onions, shallots, cébette, céleri are `flavoring` — they build the aromatic base but rarely name the dish.
+- Lardons, chorizo, anchois are `flavoring` — used to season rather than as the primary protein.

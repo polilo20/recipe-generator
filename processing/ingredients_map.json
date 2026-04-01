@@ -1,357 +1,3414 @@
 {
-  "agar-agar": ["agar agar"],
-  "agneau": ["agneau haché", "viande d'agneau hachée"],
-  "ail": ["ail noir", "ail blanc", "ail semoule", "ail rose de lautrec", "aillet", "gousse d'ail", "gousses d'ail", "gousse d'ail", "tête d'ail"],
-  "ail des ours": [],
-  "ail en poudre": [],
-  "amande": ["amandes", "amande entière", "amande entière nature non émondée", "amandes entières", "amandes entières non mondées"],
-  "pâte d'amande": ["purée d'amande", "purée d'amandes", "purée d'amandes", "pâte d'amande blanche", "crème d'amande"],
-  "amande effilée": ["amandes effilées", "amandes bâtons"],
-  "amande en poudre": ["poudre d'amande", "poudre d'amande blanche", "poudre d'amandes", "poudre d'amandes"],
-  "abricot": ["abricots", "abricot frais"],
-  "ananas": ["ananas congelé", "ananas frais", "ananas victoria", "purée d'ananas"],
-  "anchois": ["filet d'anchois", "pissalat"],
-  "aneth": ["aneth frais", "aneth ciselée"],
-  "artichaut": ["topinambour", "artichaut grillé", "artichaut poivrade", "coeur d'artichaut", "coeurs d'artichauts", "fond d'artichaut"],
-  "arôme amande amère": ["amande amère", "extrait amande amère", "extrait d'amande amère", "extrait d'amandes amères", "arôme amande amère"],
-  "arôme fleur d'oranger": ["eau de fleur d'oranger", "fleur d'oranger", "fleur d'oranger"],
-  "arôme vanille": ["arôme de vanille concentré", "arôme vanille liquide", "extrait de vanille", "extrait de vanille liquide", "vanille liquide"],
-  "asperge": ["asperges", "asperges sauvages", "asperge blanche", "asperge verte", "asperges vertes"],
-  "aubergine": [],
-  "avocat": [],
-  "badiane": ["étoile de badiane", "etoile de badiane"],
-  "baies roses": [],
-  "banane": ["bananes", "banane congelée"],
-  "basilic": ["basilic frais", "basilic séché", "basilic thaï", "feuille basilic", "feuille de basilic", "feuille de basilic frais", "feuilles de basilic", "feuilles de basilic frais"],
-  "betterave": ["betterave crue", "betterave rouge", "betterave cuite", "betterave rouge cuite"],
-  "betterave jaune": ["betterave jaune crue"],
-  "beurre": ["beurre doux", "beurre de tourage ou de charentes", "beurre de tourage", "beurre de tourage pommade", "beurre doux extra-fin", "beurre doux fondu", "beurre doux mou", "beurre doux pommade", "beurre doux très pommade", "beurre mou", "beurre pommade", "beurre pommade doux", "beurre fondu", "beurre fondu refroidi", "beurre froid", "beurre tempéré", "beurre a.o.c.", "beurre de qualité", "beurre de baratte", "beurre de barrate", "noix de beurre"],
-  "beurre clarifié": ["ghee", "ghee fondu"],
-  "beurre de cacahuète": ["beurre de cacahuètes", "beurrecacahuetes", "purée de cacahuètes"],
-  "beurre de cacao": ["beurre de cacao en poudre"],
-  "beurre demi-sel": ["beurre demi sel", "beurre demi-sel doux", "beurre demi-sel froid", "beurre demi-sel mou", "beurre demi-sel pommade", "beurre de baratte demi-sel", "beurre salé"],
-  "bicarbonate": ["bicarbonate alimentaire", "bicarbonatealimentaire", "bicarbonate de sodium", "bicarbonate de soude"],
-  "bière": ["bière brune d'abbaye"],
-  "biscuit à la cuillère": ["biscuit boudoir", "biscuits à la cuillère", "biscuits à la cuillère du commerce"],
-  "biscuit": ["biscuit spéculoos"],
-  "blanc d'oeuf": ["blanc d'œuf", "blanc d'œuf tempéré", "blanc d'oeuf vieilli", "blanc d'oeuf en poudre", "blancs d'oeuf", "blancs d'oeufs", "blancs d'oeufs tempérés", "blancs d'œuf", "blancs d'œufs"],
-  "blette": [],
-  "bleu": ["bleu d'auvergne", "bleu de brebis", "fromage bleu", "fromage à pâte persillée"],
-  "boeuf hâché": [ "viande de boeuf hachée", "viande hachée de boeuf", "viande hachée"],
-  "boeuf":["joue de boeuf", "paleron", "viande de boeuf"],
-  "chou chinois": ["bok choy", "chou bok choy", "choux bok choy", "chou pak choï", "chou pak-choï", "choux pak choï"],
-  "bouillon de légumes": ["bouillon", "bouillon de legume", "bouillon de légume", "bouillon de légumes", "cube de bouillon", "cube de bouillon de légumes", "cube de bouillon de légumes bio", "cube de bouillon de légumes ou de volaille", "cube ou sachet à infuser de bouillon de légumes"],
-  "bouillon de volaille": ["bouillon de poule", "bouillon de poulet"],
-  "boulghour": ["boulgour"],
-  "bouquet garni": [],
-  "brocoli": ["broccolinis", "brocoli nain", "broccoli floret"],
-  "ricotta": ["brousse", "brocciu"],
-  "burrata": ["burrata fumée", "burratina"],
-  "butternut": ["courge butternut", "chair de butternut", "purée de courge butternut"],
-  "câpre": ["câpres", "câpres émincés", "câpron"],
-  "cabillaud": ["filets de cabillaud"],
-  "cacahuète": ["cacahuète grillée non salée", "cacahuète non salée", "cacahuètes grillées et salées"],
-  "cacao en poudre": ["cacao", "cacao amer", "cacao amer en poudre", "cacao en poudre non sucré", "cacao non sucré", "raw cacao powder"],
-  "café": ["café lyophilisé", "café moulu", "café soluble", "espresso", "infusion de café expresso", "nescafé", "extrait de café", "pâte de café"],
-  "cannelle": ["cannelle en poudre", "cannelle moulue", "cinnamon", "bâton de cannelle", "baharat"],
-  "cannelloni": ["conchiglioni", "pâte conchiglioni"],
-  "caramel": ["caramels", "bonbon caramel"],
-  "cardamome": ["cardamome en poudre", "cardamome verte", "gousses de cardamome"],
-  "carotte": ["carottes", "carottes rapées", "carrot"],
-  "cébette": ["cébettes", "botte de cébettes", "oignon cébette", "ciboule", "cebette"],
-  "céleri": ["céleri branche"],
-  "céleri rave": [],
-  "cerise": ["cerises"],
-  "cerfeuil": [],
-  "champignon": ["champignons", "champignon frais", "champignon brun", "champignons bruns", "champignon surgelé", "button mushroom"],
-  "champignon de paris": ["champignons de paris"],
-  "champignon des bois": ["champignons des bois", "champignons portobello", "chanterelles", "cepes", "mix de champignons sauvages"],
-  "chapelure": ["chapelure fine", "panko"],
-  "chicorée rouge": ["radicchio", "salade trevisana"],
-  "chocolat au lait": ["chocolat de couverture au lait", "couverture lactée", "valrhona jivara"],
-  "chocolat blanc": ["dulcey", "dulcey valrhona", "chocolat blanc de couverture à 35%", "chocolat de couverture ivoire", "couverture ivoire", "couverture ivoire valrhona", "couverture ivoire valrhona ou blanc zéphyr de barry", "pistoles de couverture ivoire", "pistole de couverture ivoire", "pistoles zéphyr de barry"],
-  "chocolat noir": ["chocolat noir dessert", "chocolatnoir", "chocolat noir 70%", "chocolat noir corsé", "chocolat noir en pistoles", "chocolat noir pointe de sel", "chocolat noir à 66%", "chocolat noir à 72%", "chocolat à 60%", "chocolat à 66%", "chocolat à 70%", "chocolat à 99%", "chocolat corsé", "chocolat dessert", "chocolat", "chocolat \"le noir 61%\" de valrhona", "chocolat \"le noir\" 61%", "pistole de chocolat", "pistoles de chocolat", "carrés de chocolat"],
-  "chorizo": ["chorizo doux"],
-  "chou blanc": [],
-  "chou de bruxelles": [],
-  "chou kale": ["kale", "kale cru", "baby kale", "branche de chou kale", "branches de chou kale", "pousse de kale"],
-  "chou rouge": ["chou rouge émincé"],
-  "chou": ["chou cima", "chou vert", "chou rave", "chou romanesco","fleurette de chou romanesco"],
-  "chou-fleur": [],
-  "fromage de chèvre": ["chèvre", "fromage de chèvre sec", "buche de chèvre", "crottin de chavignol"],
-  "ciboulette": ["ciboulette fraiche", "ciboulette fraîche"],
-  "citron": ["citron jaune", "jus de citron", "citron bio", "citron non traité", "jus de citron jaune", "pulpe de citron", "zeste de citron", "zeste de citron bio", "zeste de citron jaune", "zeste de citron jaune bio", "zestes de citron", "zestes de citron jaune bio", "lemon juice"],
-  "citron confit": ["écorce de citron confit", "écorce de citron confit beldi", "écorce de citron"],
-  "citron vert": ["lime", "jus de citron vert", "zeste citron vert", "zeste de citron vert", "zestes de citron vert"],
-  "citronnelle": ["citronnelle ciselée", "bâton de citronnelle"],
-  "clémentine": ["jus de clémentine", "zestes de clémentine", "zestes de clémentines"],
-  "clou de girofle": ["clou de girofle moulu", "girofle", "girofle moulue"],
-  "colorant alimentaire": ["colorant rouge", "colorant en poudre doré", "colorant"],
-  "coing": [],
-  "pomme": ["pommes", "compote de pommes", "pomme golden", "compote de pommes sans sucre ajouté", "compote pommes-clémentines", "pommes golden", "pomme granny smith", "pomme verte", "pommes pink lady"],
-  "fromage de vache": ["fromage", "comté", "beaufort", "comté râpé", "cantal", "abondance", "cantal râpé", "tomme de montagne", "tomme de savoie", "appenzeller", "camembert", "camembert de campagne", "cheddar", "mimolette", "morbier", "fourme", "fourme de montbrison", "rocamadour", "saint-nectaire", "saint nectaire", "fontina", "scamorza", "scamorza fumée"],
-  "concentré de tomate": ["concentré de tomates"],
-  "concombre": ["mini concombre"],
-  "confiture": ["confiture d'abricot", "confiture de fraise", "confiture de fraises très peu sucrée", "confiture de framboise", "confiture de framboises"],
-  "coriandre": ["coriandre fraîche", "coriandre ciselée", "feuille de coriandre", "feuilles de coriandre", "coriandre thaï"],
-  "coriandre en poudre": ["coriandre moulue", "graine de coriandre", "graines de coriandre"],
-  "cornichon": ["pickles de concombre"],
-  "courge": ["courge muscade", "pâtisson", "purée de courge", "patidou", "courge spaghetti"],
-  "courgette": ["courgettes", "fleur de courgette"],
-  "crème de balsamique": ["crème de balsamique blanc", "crème de vinaigre balsamique"],
-  "crème de marrons": ["crème de marron", "marron glacé", "marrons glacés", "marron confit", "marrons confits"],
-  "crème fleurette": ["crème fleurette entière", "crème fleurette bien froide", "crème fleurette entière très froide", "crème fleurette ou crème liquide entière", "crème fleurette ou crème liquide entière bien froide", "crème fleurette à 35% ou crème liquide entière"],
-  "crème fraîche": ["crème de coco", "crème végétale", "crème de soja", "crème fraîche entière", "crème fraîche épaisse", "crème épaisse", "crème entière épaisse"],
-  "crème liquide": ["crème à fouetter et mascarpone elle & vire", "crème à fouetter et mascarpone elle&vire", "creme liquide", "crème liquide entière", "crème liquide entière froide", "crème liquide entière très froide", "crème entière liquide", "crème", "crème allégée", "crème classique", "crème classique ou végétale", "crème entière", "crème légère", "crème double"],
-  "crémant": ["champagne", "prosecco"],
-  "crêpes dentelles": ["crêpe gavotte", "crêpes dentelle \"gavottes\"", "gavotte", "gavottes", "brisures de crêpes dentelles"],
-  "crevette": ["crevettes", "crevette décortiquée", "crevettes cuites", "crevettes crues décortiquées"],
-  "cumin": ["cumin en poudre", "cumin moulu", "graine de cumin", "graine de cumin torréfiée", "graines de cumin"],
-  "curcuma": [],
-  "curry": ["curry en poudre"],
-  "datte": ["datte medjool", "dattes ultra moelleuses"],
-  "eau": ["eau chaude", "eau froide", "eau tiède", "eau très froide", "eau de source", "eau de source tiède", "eau filtrée", "eau minerale", "eau minérale", "eau minérale ou de source", "water"],
-  "emmental": ["emmental râpé", "emmenthal", "emmenthal râpé"],
-  "endive": ["endives", "endive rouge"],
-  "épinard": ["épinards", "epinard", "epinards", "épinard frais", "épinards frais", "épinards surgelés", "pousse d'épinard", "pousses d'épinard", "pousses d'épinard", "pousses d'épinard ou de roquette"],
-  "épices pour pain d'épices": ["mélange pour pain d'épices", "mélange d'épices pour pain d'épices", "épice pour pain d'épices", "épice à pain d'épice", "épice à pain d'épices", "épices pour pain d'épices", "épices pour pumpkin pie ou pain d'épices", "épices à pain d'épice"],
-  "estragon": [],
-  "faisselle": ["faisselle de chevre"],
-  "fanes de légumes": ["fanes de carottes", "fanes de radis"],
-  "farine": ["farine de sésame", "mix c de schär", "farine de riz", "farine de lentilles vertes", "farine d'epeautre", "farine d'épeautre", "farine d'épeautre intégrale", "farine d'épeautre", "farine d'avoine", "farine de maïs", "farine de lentilles", "farine classique", "farine avec levure", "farine avec levure incorporée", "farine de blé", "farine à gâteaux"],
-  "farine d'amande": ["farine d'amandes", "farinedamandes"],
-  "farine de blé t45": ["farine de force", "farine de gruau", "farine de type 45", "farine riche en gluten", "farine type 45", "farine tout usage", "farine tout usage t45", "farine 00", "farine 00 ou t45"],
-  "farine de blé t55": ["farine t55", "farine de type 55", "farine type 55"],
-  "farine de blé t65": ["farine de blé T65", "farine de blé t65", "farine t65", "farine de blé type 65"],
-  "farine de blé t80": ["farine T80", "farine t80", "farine semi complète", "farine semi-complète", "farine de blé t80", "farine buratto ou t80", "farine de blé bise", "farine de blé complète"],
-  "farine de châtaigne": ["farine de châtaignes"],
-  "farine de coco": [],
-  "maizena": ["maïzena", "fécule de maïs"],
-  "farine de petit épeautre": ["farine de petit épeautre intégrale"],
-  "farine de pois chiche": ["farine de pois chiches"],
-  "farine de sarrasin": [],
-  "farine de seigle": [],
-  "farine de teff": ["farineteff", "farine de teff blanc", "farine de teff blanc ou de sarrasin", "farine de teff blanche"],
-  "fenouil": ["bulbe de fenouil"],
-  "feta": ["féta", "fêta"],
-  "feuille de gélatine": ["gélatine", "gélatine 200 bloom", "gélatine 200 bloom en poudre", "gélatine en feuille ou en poudre", "gélatine en poudre", "gélatine en poudre 200 bloom"],
-  "feuille de laurier": ["feuilles de laurier", "laurier"],
-  "figue": ["figues", "figues fraîches", "figue séchée", "figues séchées"],
-  "flageolet": ["flageolet sec"],
-  "fleur de sel": ["gros sel", "gros sel/fleur de sel"],
-  "flocon de céréale": ["corn flakes", "corn flake nature", "corn flakes nature","flocon d'avoine", "flocons d'avoine", "flocons d'avoine", "flocon d'orge", "flocon de seigle", "flocon de riz"],
-  "fraise": ["fraises", "purée de fraise", "jus de fraise","fraise française", "fraises des bois", "fraise fraîche", "fraises fraîches", "fraises gariguettes de plougastel"],
-  "framboise": ["framboises", "purée de framboise", "coulis de framboise", "coulis framboise", "framboise fraîche", "framboises fraîches", "framboises surgelées"],
-  "fromage blanc": ["fromage blanc nature", "fromage blanc ou yaourt grec"],
-  "fromage de brebis": ["tome de brebis", "tomme de brebis", "tomme de chèvre", "ossau-iraty", "ossau iraty aop istara"],
-  "fromage frais": ["cream cheese", "fromage philadelphia", "philadelphia", "fromage de brebis frais", "chèvre frais", "fromage de chèvre frais", "boursin", "boursin cuisine", "cottage cheese"],
-  "fromage râpé": [],
-  "fruit de la passion": ["purée de fruits de la passion", "jus de fruits de la passion", "purée passion"],
-  "fruits rouges": ["fruit rouge", "fruits rouges de saison"],
-  "fève": ["fèves"],
-  "fève tonka": [],
-  "fécule de pomme de terre": ["fécule de pommes de terre", "fécule"],
-  "gambas": ["gamba", "gambas cuites", "gamba cuite"],
-  "gingembre": ["gingembre frais", "gingembre frais râpé", "gingembre râpé", "ginger", "gingembre mariné"],
-  "gingembre en poudre": ["gingembre moulu"],
-  "gorgonzola": [],
-  "gousse de vanille": ["gousse de vanille de tahiti", "gousse vanille", "gousses de vanille", "graines de vanille", "graines d'une gousse de vanille"],
-  "graine de courge": ["graines de courge", "graines de butternut", "graines de potimarron"],
-  "graine de lin": ["graines de lin", "graine de lin brun", "graines de lin moulues"],
-  "graine de moutarde": ["grains de moutarde", "graines de moutarde"],
-  "graine de pavot": ["graines de pavot"],
-  "graine de sésame": ["graines de sésame", "graines de sésames", "grains de sésames", "sésame", "sésame blanc", "sésame noir", "sésame noir et blanc", "sésames", "graine de sésame blanc"],
-  "graine de tournesol": ["graines de tournesol"],
-  "groseille": ["groseilles"],
-  "gruyère": ["gruyère de france", "gruyère des alpages", "gruyère râpé"],
-  "halloumi": [],
-  "haricot blanc": ["haricot tarbais", "haricot tarbais sec"],
-  "haricot rouge": ["haricots azukis"],
-  "haricot vert": ["haricots verts"],
-  "harissa": [],
-  "herbes de provence": ["herbe de provence"],
-  "huile d'olive": ["huile d'olive", "huile d\u2019olive", "huile d'olive extra vierge", "huile d'olive extra vierge bio", "huile d'olive vierge extra", "huile olive", "filet d'huile d'olive"],
-  "huile de coco": ["huilecoco", "huile de coco fondue"],
-  "huile de noix": [],
-  "huile de sésame": ["huile de sésame grillée", "filet d'huile de sésame"],
-  "huile neutre": ["huile de tournesol", "huile de tournesol ou de colza", "huile tournesol", "huile de colza", "huile de colza ou tournesol", "huile de colza ou tournesol ou pépins de raisins", "huile", "huile végétale", "huile de cuisson", "huile de friture", "huile pour friture", "huile pimentée", "huile neutre de pépins de raisins ou de tournesol", "huile neutre pépins de raisins", "huile de pépin de raisin", "huile de pépins de raisin", "huile de pépins de raisin", "huile de pépins de raisins", "huile de pépins de raisins ou de tournesol", "huile d'arachide", "huile d'argan"],
-  "jambon cru": ["jambon cru de parme", "jambon de bayonne", "jambon de parme", "jambon de savoie", "jambon ibérique bellota", "jambon sec", "tranches de jambon cru"],
-  "jambon cuit": ["jambon"],
-  "jaune d'oeuf": ["jaune d'œuf", "jaune d\u2019œuf", "jaune d'œuf tempéré", "jaune d'oeuf dur", "jaunes d'oeuf", "jaunes d'oeufs", "jaunes d'oeufs tempérés", "jaunes d'œufs", "jaunes d\u2019œufs", "jaunes d'œufs", "jaune d'œuf"],
-  "kaki": ["kaki persimon"],
-  "kirsch": [],
-  "kiwi": [],
-  "lait": ["lait demi-écrémé", "lait de chèvre", "lait de brebis", "lait demi-écrémé ou entier", "lait demi-écrémé tiède", "lait entier", "lait entier ou demi-écrémé", "lait frais entier", "lait froid", "lait tiède", "lait de vache"],
-  "lait concentré sucré": ["lait concentré", "lait concentré non sucré entier"],
-  "lait végétal": ["lait de noisette", "lait de noisette ou lait classique","lait d'amande", "lait d'avoine", "lait ou lait végétal", "lait de soja", "lait de vache ou d'amandes", "lait demi-écrémé ou lait d'amandes sans sucre ajouté", "lait d'amandes", "laitamandes", "lait d'amande sans sucre ajouté", "lait d'amandes sans sucre ajouté", "boisson végétale aux amandes"],
-  "lait de coco": ["boisson coco", "light coconut milk"],
-  "lait en poudre": ["lait en poudre à 0%", "lait entier en poudre", "poudre de lait"],
-  "lait fermenté": ["lait ribot"],
-  "langoustine": ["langoustine crue"],
-  "lard fumé": ["lardons fumés", "bacon de poitrine fumée", "pancetta"],
-  "lavande": ["fleurs de lavande", "grain de lavande"],
-  "lentille beluga": ["lentille noire", "lentille beluga crue"],
-  "lentille corail": ["lentilles corail"],
-  "lentille": ["lentille verte", "lentille verte sèche", "lentille blonde"],
-  "levure boulangère": ["levure boulangère fraîche", "levure boulangère sèche", "levure boulangère sèche active", "levure de boulanger", "levure de boulanger fraîche", "levure de boulanger sèche", "levure de boulangerie", "levure fraîche", "levure", "levure fraîche boulangère", "levure fraîche de boulanger", "levure sèche"],
-  "levure chimique": ["poudre à lever"],
-  "linguine": [],
-  "macaroni": ["macaronis"],
-  "mangue": ["mangue mûre mais assez ferme", "purée de mangue"],
-  "margarine": ["crisco"],
-
-  "marmelade d'orange": ["marmelade d'orange non sucrée"],
-  "mascarpone": [],
-  "mayonnaise": [],
-  "melon": [],
-  "menthe": ["menthe fraiche", "menthe fraîche", "menthe ciselée", "menthe ou coriandre fraîche", "feuille de menthe", "feuille de menthe fraîche", "feuilles de menthe", "feuilles de menthe fraîche", "fresh mint leaf", "branche de menthe"],
-  "salade": ["salade mélangée", "feuilles de salade", "salade", "salade verte", "feuille d'iceberg", "feuille de chêne", "feuille de chêne rouge", "feuille de chêne verte", "feuille de laitue", "feuille de sucrine"],
-  "mesclun":[],
-  "miel": ["miel d'acacia", "miel de châtaignes", "miel de châtaignier", "miel de fleurs", "miel liquide"],
-  "mirabelle": ["mirabelles"],
-  "miso": ["miso rouge", "pâte de miso blanc", "miso broth cube"],
-
-  "moutarde": ["moutarde de dijon", "moutarde douce", "moutarde fine forte", "moutarde forte", "moutarde forte de dijon", "moutarde au miel"],
-  "moutarde à l'ancienne": ["moutarde a l'ancienne", "moutarde à l'ancienne", "moutarde à l\u2019ancienne"],
-  "mozzarella": ["mozzarella di bufala"],
-  "muscade": ["noix de muscade", "noix de muscade moulue", "muscade moulue", "nutmeg"],
-  "baies noires": ["myrtilles", "airelles", "airelle", "mûres", "mûre", "myrtille"],
-  "mâche": ["feuille de mâche"],
-  "mélasse": ["mélasse de sucre de canne"],
-  "grenade": ["mélasse de grenade", "grenade", "grenadine", "graine de grenade", "graines de grenade"],
-  "navet": ["navet boule d'or", "navet boule d'or", "rutabaga", "chou rave", "panais"],
-  "nectarine": ["nectarine jaune", "nectarines"],
-  "noisette": ["noisettes", "noisette entière", "noisettes entières", "noisette concassée", "noisettes concassées", "noisette décortiquée", "noisette torréfiée", "noisettes torréfiées", "noisettes grillées", "noisettes hachées", "noisette grillée et concassée", "noisettes hâchées et grillées", "hazelnuts"],
-  "purée de noisette": ["purée de noisette", "purée de noisettes", "crème de noisette"],
-  "noisette en poudre": ["noisettes en poudre", "poudre de noisette", "poudre de noisette torréfiée", "poudre de noisettes"],
-  "noix": ["noix concassées", "noix torréfiée", "cerneau de noix", "cerneaux de noix", "cerneraux de noix", "nois"],
-  "noix de cajou": ["purée de noix de cajou", "purée de cajou"],
-  "noix de coco": ["noix de coco râpée", "noix de coco râpée torréfiée", "noix de coco torréfiée", "copeau de coco", "copeau de noix de coco", "copeaux de noix de coco", "chip de noix de coco", "chips de coco", "poudre de coco", "shredded coconut"],
-  "noix de pécan": ["noix de pecan", "noix de pécan mixée", "noix de pécan torréfiées et concassées", "poudre de noix de pécan"],
-  "noix de saint-jacques": ["saint-jacques"],
-  "nouilles": ["nouille de riz", "rice noodle", "nouille", "nouilles de soba", "nouille soba", "nouille udon", "nouilles chinoises", "nouilles ramen"],
-  "oeuf": ["oeufs", "œufs", "œuf", "gros oeuf", "gros oeufs", "oeuf battu", "oeuf bio", "oeuf bio extra-frais", "oeuf entier", "oeuf frais", "oeuf tempéré", "oeufs entiers", "petit oeuf", "œuf battu en omelette", "œuf entier"],
-  "oeuf de saumon/truite": ["oeuf de saumon", "oeufs de saumon", "œufs de saumon", "oeufs de truite"],
-  "oignon": ["oignons", "oignon paille"],
-  "oignon blanc": [],
-  "oignon doux": [],
-  "oignon jaune": [],
-  "oignon nouveau": ["oignons nouveaux", "petit oignon nouveau", "tige d'oignon nouveau"],
-  "oignon rouge": ["oignon nouveau rouge", "red onion", "pickle d'oignon rouge"],
-  "olive noire": ["olives noires", "olive", "olive kalamata", "olive noire à la grecque", "olive taggiasche", "olive violette"],
-  "olive verte": ["olives vertes", "olive verte dénoyautée"],
-  "orange": ["orange bio", "jus d'orange", "quartier d'orange", "zeste d'orange", "zeste d'orange bio", "zestes d'orange", "zestes d'orange bio", "zests d'orange", "zestes d'orange ou de citron", "écorce d'orange bio"],
-  "orange sanguine": ["blood orange"],
-  "origan": ["origan frais", "origan séché", "feuille d'origan frais", "branche d'origan", "marjolaine"],
-  "petites pâtes de blé/sarrasin dur": ["pâte orzo", "orzo", "pâtes orzo", "fregola","riso","crozet", "crozets alpina au sarrasin"],
-  "pain": ["pain à burger", "pain à hamburger", "mie de pain", "pain a hamburger", "bun", "pain au levain", "brioche", "focaccia", "baguette", "pain de campagne", "pain grillé", "pain rassis", "tranche de pain", "tranche de pain fine", "tartine de pain", "croûton"],
-  "pain de mie": ["pain de mie complet"],
-  "pain pita": ["pita", "tortilla", "tortilla de maïs"],
-  "pamplemousse": ["pomelo", "pomelo corse", "jus de pamplemousse", "zestes de pamplemousse"],
-  "paprika": ["paprika doux"],
-  "paprika fumé": ["paprika fumé en poudre"],
-  "parmesan": ["parmesan râpé", "parmesan fraîchement râpé"],
-  "pastèque": [],
-  "patate douce": ["sweet potato"],
-  "pâte brisée": ["pâte brisée sucrée"],
-  "pâte de pistache": ["pâte de pistache pure", "pâte/praliné de pistaches", "arôme pistache"],
-  "pâte feuilletée": ["pâte feuilletée inversée", "pâte feuilletée pur beurre"],
-  "pâte filo": ["feuille de filo", "feuille de pâte filo", "feuille de brick"],
-  "pâte à tartiner": ["nocciolata", "pâte à tartiner choc-noisettes sans lait", "pâte à tartiner chocolat-noisettes"],
-  "pâtes": ["bucatini", "pates bucatini", "pâtes rigatoni", "pâtes pappardelle", "mezzi rigatoni", "penne rigate", "conchiglie", "farfalles", "raviole du dauphiné", "pâtes bucatini", "pâte bucatini","pâtes courtes", "pâtes longues", "gnocchi", "coquillette", "coquillettes", "pâtes de qualité", "petites pâtes", "macaroni", "macaronis", "penne", "penne-rigate", "pâtes penne"],
-  "pectine": ["pectine nh", "pectine nh nappage", "nappage pour tartes", "gouttes de nappage neutre", "pectine x58", "pectine x58 ou pectine nh", "nappage neutre", "nappage neutre ou confiture d'abricot", "nappage"],
-  "pecorino": ["pecorino pepato", "pecorino romano", "pecorino romano râpé", "pecorino râpé", "pecorino toscano", "copeaux de pecorino", "fiore sardo"],
-  "pépites de chocolat": ["pépite de chocolat", "pépites de chocolat noir", "chunks au chocolat", "fins granulés de chocolat", "billes chocolatées", "chocolate lover mix"],
-  "persil": ["persil frais", "persil ciselé", "persil plat", "persil plat ciselé", "persil plat frais", "persil ou thym frais", "feuille de persil", "feuille de persil plat", "feuilles de persil", "fresh parsley leaf"],
-  "petit épeautre": ["petit epeautre"],
-  "petit pois": ["petits pois", "petit pois écossé", "edamame"],
-  "petit suisse": [],
-  "pignon de pin": ["pignons de pin", "pignons de pins", "pignon", "pignons"],
-  "piment": ["pâte de piment", "pâte de piment sambal oalek", "piment en flocons", "piment chili", "piment en flocon", "piment en paillette", "piment en poudre", "piment oiseau", "piment oiseau en flocons", "piment rouge", "piment séché", "piment séché en flocon", "piment séché en poudre", "piment vert", "piment vert piquant", "piments en flocons", "piments verts", "piments langue d'oiseau déshydratés", "flocon de piment", "flocons de piment", "flocons de piments"],
-  "piment d'espelette": ["piment d'espelette aop"],
-  "piment de cayenne": ["piment de cayenne en poudre", "piment de cayenne moulu"],
-  "pistache": ["pistaches", "pistache entière", "pistache non salée", "pistache émondée", "pistache émondée non salée", "pistaches concassées", "pistache concassée", "pistaches entières émondées", "pistaches émondées non salées"],
-  "pistache en poudre": ["poudre de pistache", "poudre de pistaches"],
-  "poire": ["poires", "poire williams"],
-  "poireau": ["poireaux", "blanc de poireau", "pousse de poireau", "feuilles de vert de poireaux"],
-  "légumineuses anciennes": ["pois carrés", "pois carré", "flageolet"],
-  "pois cassé": ["pois cassés", "pois cassé sec"],
-  "pois chiche": ["pois chiches", "pois chiche cuit", "pois chiche sec", "pois chiches cuits"],
-  "poivre": ["poivre noir", "poivre de Timut", "poivre de timut", "poivre vert", "sel et poivre", "poivre du moulin", "poivre noir du moulin", "grain de poivre noir", "poivre blanc", "black pepper", "pepper"],
-  "poivron": ["poivron long", "mini poivron", "poivron vert", "poivron jaune", "poivron rouge", "poivron grillé", "poivron rouge grillé en saumure"],
-  "polenta": ["polenta précuite", "semoule de mais", "semoule de maïs"],
-  "pomme de terre": ["pommes de terre", "purée de pommes de terre", "petite pomme de terre", "pomme de terre grenaille", "pomme de terre primeur", "fingerling potatoes"],
-  "potimarron": [],
-  "potiron": ["purée de potiron"],
-  "maïs": ["maïs doux", "maïs frais"],
-  "poudre à crème": ["poudre à flan", "poudre à flan ou maïzena"],
-  "volaille": ["dinde", "cuisse de dinde", "escalope de dinde","poulet", "blanc de poulet", "filet de poulet", "filets de poulet", "cuisse de poulet", "haut de cuisse", "haut de cuisse de poulet désossé", "pilon de poulet", "aiguillette de poulet"],
-  "praliné": ["praliné 50/50", "praliné amande", "praliné amande noisette", "praliné noisette", "praliné pécan", "pralin", "pralin en poudre", "pralin maison", "pâte de praliné", "croustillant aux amandes", "gianduja"],
-  "prune": ["prune reine claude", "prune rouge"],
-  "psyllium": [],
-  "tahini": ["purée de sésame blanc", "tahini", "purée de sésame", "pâte de sésame"],
-  "pêche": ["pêches", "pêche plate", "purée de pêche"],
-  "quatre-épices": ["4 ou 5 épices", "4 épices", "5 épices", "mélange 4 épices", "mélange quatre-épices", "quatre épices"],
-  "quinoa": ["quinoa rouge"],
-  "radis": ["radis rose", "radis rouge"],
-  "radis noir": ["radis d'hiver"],
-  "raisin": ["raisin blanc", "raisin chasselas", "raisin frais", "raisin noir", "raisin rouge"],
-  "raisin sec": ["raisins secs", "raisin sec blond", "raisin sec sultanine", "raisins secs blonds", "raisins secs blonds moelleux"],
-  "ras el hanout": ["ras-el-hanout"],
-  "rhubarbe": ["rhubarbe fraîche", "rhubarbe surgelée"],
-  "rhum": ["rhum agricole brun", "rhum ambré", "rhum blanc", "rhum brun"],
-  "riz": ["riz sauvage", "riz semi-complet", "riz rond demi-complet"],
-  "riz risotto": ["riz arborio", "riz carnaroli", "riz pour risotto"],
-  "riz basmati": ["riz basmati ou thaï", "riz jasmin ou basmati", "riz thaï"],
-  "eau de vie":["gin ou vodka", "amaretto", "vodka", "whisky", "scotch", "armagnac", "calvados", "alcool de poire", "eau de vie de poire", "cognac", "porto", "liqueur", "eau-de-vie", "grand marnier", "grand-marnier"],
-  "romarin": ["romarin frais", "romarin haché", "romarin séché", "branche de romarin", "feuilles de romarin"],
-  "roquefort": [],
-  "roquette": ["roquette fraîche", "roquette ou mâche", "arugula", "pousse de roquette"],
-  "sablé": ["sablés bretons", "sablé breton", "sablés pur beurre", "sablé anglais", "sablés anglais"],
-  "safran": ["pistil de safran", "pistils de safran", "spigol"],
-  "sarrasin": ["sarrasin activé", "millet", "sarrasin décortiqué", "sarrasin grillé", "graine de sarrasin", "kasha", "buckini", "buckinis"],
-  "sauce soja": ["sauce soja claire", "sauce soja salée", "sauce soja sucrée", "sauce tamari", "tamari", "shoyu sucré"],
-  "purée de tomates": ["sauce tomate", "tomate pelée", "coulis de tomates", "coulis de tomate", "passata","purée de tomate", "pulpe de tomates"],
-  "saucisse": ["chair à saucisse"],
-  "sauge": ["sauge fraîche", "feuille de sauge"],
-  "saumon": ["saumon frais", "darne de saumon", "pavé de saumon", "pavé de saumon frais", "filet de saumon"],
-  "saumon fumé": ["pavé de saumon fumé", "saumon ou truite fumée", "tranches de carpaccio de saumon"],
-  "sel": ["sel fin", "sel épicé", "sel fumé", "sel rose de l'himalaya", "sel de guérande au piment d'espelette", "pink himalayan salt"],
-  "semoule": ["semoule fine", "semoule de blé dur","couscous", "couscous fin", "graines de couscous", "semoule de blé dur fine", "semoule de blé dur moyenne", "semoule de blé fine", "semoule fine de blé dur"],
-  "sirop d'érable": ["sirop d'érable", "érable", "maple syrup"],
-  "sirop sucrant": ["sirop d'agave", "sirop de glucose", "glucose", "golden syrup", "sirop de dattes", "sucre de canne liquide"],
-  "skyr": ["skyr de brebis", "fjord"],
-  "spaghetti": ["spaghetti complet"],
-  "sucre": ["sucre en grains", "sucre perlé", "sucre blanc", "sucre à confiture", "sucre en poudre", "sucre semoule", "sucre ou miel", "sucre en poudre ou farine"],
-  "cassonade": ["sucre brun", "cassonnade", "sucre roux", "sucre blond de canne", "sucre de canne", "sucre de canne blond", "sucre blond", "sucre cassonade", "vergeoise", "vergeoise blonde", "vergeoise brune", "sucre vergeoise"],
-  "sucre complet": ["sucre de canne complet", "sucre muscovado"],
-  "sucre de coco": ["sucrecoco", "coconut sugar"],
-  "sucre glace": ["sucre glace décor", "sucre neige décor"],
-  "sucre inverti": [],
-  "sucre vanillé": [],
-  "tabasco": [],
-  "thon": [],
-  "thym": ["thym citron", "branche de thym citron", "thym frais", "thym frais entier", "thym séché", "branche de thym", "branche de thym frais", "sarriette"],
-  "tofu": ["tofu fumé", "tofu block", "seitan", "steak seitan"],
-  "tomate": ["tomates", "tomate grappe", "tomate noire", "tomate roma", "tomate ancienne", "tomate ananas", "tomate verte", "chair de tomate", "chair de tomates"],
-  "tomate cerise": ["tomates cerises", "tomates cerises piccolo", "tomates cerise"],
-  "tomate concassée": ["tomates concassées"],
-  "tomate pelée": ["tomates pelées", "tomate pelée concassée"],
-  "tomate séchée": ["tomates séchées", "pâte de tomates séchées", "tomate confite"],
-  "vanille": ["vanille bourbon", "vanille de tahiti", "vanillepoudre", "vanille en poudre", "poudre de vanille", "poudre de vanille de tahiti", "vanilla powder"],
-  "verveine": ["verveine citronnelle", "verveine-citronnelle", "feuille de verveine", "feuille de verveine citronnelle", "feuilles de verveine", "feuilles de verveine citronnelle"],
-  "vin blanc": ["vin blanc sec", "muscat", "vin blanc moelleux", "vin rouge", "vin"],
-  "vinaigre balsamique": ["vinaigre balsamique blanc", "vinaigre balsamique blanc ou de cidre", "vinaigre valdespino"],
-  "vinaigre blanc": ["vinaigre d'alcool blanc", "vinaigre"],
-  "vinaigre de cidre": ["vinaigre de cidre ou de vin"],
-  "vinaigre de riz": ["vinaigre de riz ou d'alcool blanc"],
-  "vinaigre de vin": ["vinaigre de vin blanc", "vinaigre de vin rouge"],
-  "vinaigre de xérès": ["vinaigre de xéres"],
-  "yaourt": ["yaourt nature", "yaourts natures", "yahourt"],
-  "yaourt de brebis": [],
-  "yaourt grec": ["yaourt à la grecque"],
-  "zaatar": [],
-  "échalote": ["échalotes"],
-  "éclat de fève de cacao": ["éclats de fèves de cacao"],
-  "éclat de pistache": ["éclats de pistaches"]
+  "agar-agar": {
+    "normalizing": [
+      "agar agar"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "agneau": {
+    "normalizing": [
+      "agneau haché",
+      "viande d'agneau hachée"
+    ],
+    "category": "Viandes & Poissons",
+    "weight": "main"
+  },
+  "ail": {
+    "normalizing": [
+      "ail noir",
+      "ail blanc",
+      "ail semoule",
+      "ail rose de lautrec",
+      "aillet",
+      "gousse d'ail",
+      "gousses d'ail",
+      "gousse d'ail",
+      "tête d'ail"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "ail des ours": {
+    "normalizing": [],
+    "category": "Herbes",
+    "weight": "flavoring"
+  },
+  "ail en poudre": {
+    "normalizing": [],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "amande": {
+    "normalizing": [
+      "amandes",
+      "amande entière",
+      "amande entière nature non émondée",
+      "amandes entières",
+      "amandes entières non mondées"
+    ],
+    "category": "Fruits secs & Graines",
+    "weight": "flavoring"
+  },
+  "pâte d'amande": {
+    "normalizing": [
+      "purée d'amande",
+      "purée d'amandes",
+      "purée d'amandes",
+      "pâte d'amande blanche",
+      "crème d'amande"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "flavoring"
+  },
+  "amande effilée": {
+    "normalizing": [
+      "amandes effilées",
+      "amandes bâtons"
+    ],
+    "category": "Fruits secs & Graines",
+    "weight": "flavoring"
+  },
+  "amande en poudre": {
+    "normalizing": [
+      "poudre d'amande",
+      "poudre d'amande blanche",
+      "poudre d'amandes",
+      "poudre d'amandes"
+    ],
+    "category": "Fruits secs & Graines",
+    "weight": "base"
+  },
+  "abricot": {
+    "normalizing": [
+      "abricots",
+      "abricot frais"
+    ],
+    "category": "Fruits",
+    "weight": "main"
+  },
+  "ananas": {
+    "normalizing": [
+      "ananas congelé",
+      "ananas frais",
+      "ananas victoria",
+      "purée d'ananas"
+    ],
+    "category": "Fruits",
+    "weight": "main"
+  },
+  "anchois": {
+    "normalizing": [
+      "filet d'anchois",
+      "pissalat"
+    ],
+    "category": "Viandes & Poissons",
+    "weight": "flavoring"
+  },
+  "aneth": {
+    "normalizing": [
+      "aneth frais",
+      "aneth ciselée"
+    ],
+    "category": "Herbes",
+    "weight": "flavoring"
+  },
+  "artichaut": {
+    "normalizing": [
+      "topinambour",
+      "artichaut grillé",
+      "artichaut poivrade",
+      "coeur d'artichaut",
+      "coeurs d'artichauts",
+      "fond d'artichaut"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "arôme amande amère": {
+    "normalizing": [
+      "amande amère",
+      "extrait amande amère",
+      "extrait d'amande amère",
+      "extrait d'amandes amères",
+      "arôme amande amère"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "flavoring"
+  },
+  "arôme fleur d'oranger": {
+    "normalizing": [
+      "eau de fleur d'oranger",
+      "fleur d'oranger",
+      "fleur d'oranger"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "flavoring"
+  },
+  "arôme vanille": {
+    "normalizing": [
+      "arôme de vanille concentré",
+      "arôme vanille liquide",
+      "extrait de vanille",
+      "extrait de vanille liquide",
+      "vanille liquide"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "flavoring"
+  },
+  "asperge": {
+    "normalizing": [
+      "asperges",
+      "asperges sauvages",
+      "asperge blanche",
+      "asperge verte",
+      "asperges vertes"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "aubergine": {
+    "normalizing": [],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "avocat": {
+    "normalizing": [],
+    "category": "Fruits",
+    "weight": "main"
+  },
+  "badiane": {
+    "normalizing": [
+      "étoile de badiane",
+      "etoile de badiane"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "baies roses": {
+    "normalizing": [],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "banane": {
+    "normalizing": [
+      "bananes",
+      "banane congelée"
+    ],
+    "category": "Fruits",
+    "weight": "main"
+  },
+  "basilic": {
+    "normalizing": [
+      "basilic frais",
+      "basilic séché",
+      "basilic thaï",
+      "feuille basilic",
+      "feuille de basilic",
+      "feuille de basilic frais",
+      "feuilles de basilic",
+      "feuilles de basilic frais"
+    ],
+    "category": "Herbes",
+    "weight": "flavoring"
+  },
+  "betterave": {
+    "normalizing": [
+      "betterave crue",
+      "betterave rouge",
+      "betterave cuite",
+      "betterave rouge cuite"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "betterave jaune": {
+    "normalizing": [
+      "betterave jaune crue"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "beurre": {
+    "normalizing": [
+      "beurre doux",
+      "beurre de tourage ou de charentes",
+      "beurre de tourage",
+      "beurre de tourage pommade",
+      "beurre doux extra-fin",
+      "beurre doux fondu",
+      "beurre doux mou",
+      "beurre doux pommade",
+      "beurre doux très pommade",
+      "beurre mou",
+      "beurre pommade",
+      "beurre pommade doux",
+      "beurre fondu",
+      "beurre fondu refroidi",
+      "beurre froid",
+      "beurre tempéré",
+      "beurre a.o.c.",
+      "beurre de qualité",
+      "beurre de baratte",
+      "beurre de barrate",
+      "noix de beurre"
+    ],
+    "category": "Produits laitiers",
+    "weight": "base"
+  },
+  "beurre clarifié": {
+    "normalizing": [
+      "ghee",
+      "ghee fondu"
+    ],
+    "category": "Produits laitiers",
+    "weight": "base"
+  },
+  "beurre de cacahuète": {
+    "normalizing": [
+      "beurre de cacahuètes",
+      "beurrecacahuetes",
+      "purée de cacahuètes"
+    ],
+    "category": "Fruits secs & Graines",
+    "weight": "flavoring"
+  },
+  "beurre de cacao": {
+    "normalizing": [
+      "beurre de cacao en poudre"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "beurre demi-sel": {
+    "normalizing": [
+      "beurre demi sel",
+      "beurre demi-sel doux",
+      "beurre demi-sel froid",
+      "beurre demi-sel mou",
+      "beurre demi-sel pommade",
+      "beurre de baratte demi-sel",
+      "beurre salé"
+    ],
+    "category": "Produits laitiers",
+    "weight": "flavoring"
+  },
+  "bicarbonate": {
+    "normalizing": [
+      "bicarbonate alimentaire",
+      "bicarbonatealimentaire",
+      "bicarbonate de sodium",
+      "bicarbonate de soude"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "bière": {
+    "normalizing": [
+      "bière brune d'abbaye"
+    ],
+    "category": "Alcools & Vinaigres",
+    "weight": "flavoring"
+  },
+  "biscuit à la cuillère": {
+    "normalizing": [
+      "biscuit boudoir",
+      "biscuits à la cuillère",
+      "biscuits à la cuillère du commerce"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "biscuit": {
+    "normalizing": [
+      "biscuit spéculoos"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "blanc d'oeuf": {
+    "normalizing": [
+      "blanc d'œuf",
+      "blanc d'œuf tempéré",
+      "blanc d'oeuf vieilli",
+      "blanc d'oeuf en poudre",
+      "blancs d'oeuf",
+      "blancs d'oeufs",
+      "blancs d'oeufs tempérés",
+      "blancs d'œuf",
+      "blancs d'œufs"
+    ],
+    "category": "Autres",
+    "weight": "base"
+  },
+  "blette": {
+    "normalizing": [],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "bleu": {
+    "normalizing": [
+      "bleu d'auvergne",
+      "bleu de brebis",
+      "fromage bleu",
+      "fromage à pâte persillée"
+    ],
+    "category": "Produits laitiers",
+    "weight": "flavoring"
+  },
+  "boeuf hâché": {
+    "normalizing": [
+      "viande de boeuf hachée",
+      "viande hachée de boeuf",
+      "viande hachée"
+    ],
+    "category": "Viandes & Poissons",
+    "weight": "main"
+  },
+  "boeuf": {
+    "normalizing": [
+      "joue de boeuf",
+      "paleron",
+      "viande de boeuf"
+    ],
+    "category": "Viandes & Poissons",
+    "weight": "main"
+  },
+  "chou chinois": {
+    "normalizing": [
+      "bok choy",
+      "chou bok choy",
+      "choux bok choy",
+      "chou pak choï",
+      "chou pak-choï",
+      "choux pak choï"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "bouillon de légumes": {
+    "normalizing": [
+      "bouillon",
+      "bouillon de legume",
+      "bouillon de légume",
+      "bouillon de légumes",
+      "cube de bouillon",
+      "cube de bouillon de légumes",
+      "cube de bouillon de légumes bio",
+      "cube de bouillon de légumes ou de volaille",
+      "cube ou sachet à infuser de bouillon de légumes"
+    ],
+    "category": "Autres",
+    "weight": "base"
+  },
+  "bouillon de volaille": {
+    "normalizing": [
+      "bouillon de poule",
+      "bouillon de poulet"
+    ],
+    "category": "Autres",
+    "weight": "base"
+  },
+  "boulghour": {
+    "normalizing": [
+      "boulgour"
+    ],
+    "category": "Féculents & Céréales",
+    "weight": "base"
+  },
+  "bouquet garni": {
+    "normalizing": [],
+    "category": "Herbes",
+    "weight": "flavoring"
+  },
+  "brocoli": {
+    "normalizing": [
+      "broccolinis",
+      "brocoli nain",
+      "broccoli floret"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "ricotta": {
+    "normalizing": [
+      "brousse",
+      "brocciu"
+    ],
+    "category": "Produits laitiers",
+    "weight": "flavoring"
+  },
+  "burrata": {
+    "normalizing": [
+      "burrata fumée",
+      "burratina"
+    ],
+    "category": "Produits laitiers",
+    "weight": "flavoring"
+  },
+  "butternut": {
+    "normalizing": [
+      "courge butternut",
+      "chair de butternut",
+      "purée de courge butternut"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "câpre": {
+    "normalizing": [
+      "câpres",
+      "câpres émincés",
+      "câpron"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "cabillaud": {
+    "normalizing": [
+      "filets de cabillaud"
+    ],
+    "category": "Viandes & Poissons",
+    "weight": "main"
+  },
+  "cacahuète": {
+    "normalizing": [
+      "cacahuète grillée non salée",
+      "cacahuète non salée",
+      "cacahuètes grillées et salées"
+    ],
+    "category": "Fruits secs & Graines",
+    "weight": "flavoring"
+  },
+  "cacao en poudre": {
+    "normalizing": [
+      "cacao",
+      "cacao amer",
+      "cacao amer en poudre",
+      "cacao en poudre non sucré",
+      "cacao non sucré",
+      "raw cacao powder"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "flavoring"
+  },
+  "café": {
+    "normalizing": [
+      "café lyophilisé",
+      "café moulu",
+      "café soluble",
+      "espresso",
+      "infusion de café expresso",
+      "nescafé",
+      "extrait de café",
+      "pâte de café"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "flavoring"
+  },
+  "cannelle": {
+    "normalizing": [
+      "cannelle en poudre",
+      "cannelle moulue",
+      "cinnamon",
+      "bâton de cannelle",
+      "baharat"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "cannelloni": {
+    "normalizing": [
+      "conchiglioni",
+      "pâte conchiglioni"
+    ],
+    "category": "Féculents & Céréales",
+    "weight": "base"
+  },
+  "caramel": {
+    "normalizing": [
+      "caramels",
+      "bonbon caramel"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "flavoring"
+  },
+  "cardamome": {
+    "normalizing": [
+      "cardamome en poudre",
+      "cardamome verte",
+      "gousses de cardamome"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "carotte": {
+    "normalizing": [
+      "carottes",
+      "carottes rapées",
+      "carrot"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "cébette": {
+    "normalizing": [
+      "cébettes",
+      "botte de cébettes",
+      "oignon cébette",
+      "ciboule",
+      "cebette"
+    ],
+    "category": "Légumes",
+    "weight": "flavoring"
+  },
+  "céleri": {
+    "normalizing": [
+      "céleri branche"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "céleri rave": {
+    "normalizing": [],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "cerise": {
+    "normalizing": [
+      "cerises"
+    ],
+    "category": "Fruits",
+    "weight": "main"
+  },
+  "cerfeuil": {
+    "normalizing": [],
+    "category": "Herbes",
+    "weight": "flavoring"
+  },
+  "champignon": {
+    "normalizing": [
+      "champignons",
+      "champignon frais",
+      "champignon brun",
+      "champignons bruns",
+      "champignon surgelé",
+      "button mushroom"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "champignon de paris": {
+    "normalizing": [
+      "champignons de paris"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "champignon des bois": {
+    "normalizing": [
+      "champignons des bois",
+      "champignons portobello",
+      "chanterelles",
+      "cepes",
+      "mix de champignons sauvages"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "chapelure": {
+    "normalizing": [
+      "chapelure fine",
+      "panko"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "chicorée rouge": {
+    "normalizing": [
+      "radicchio",
+      "salade trevisana"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "chocolat au lait": {
+    "normalizing": [
+      "chocolat de couverture au lait",
+      "couverture lactée",
+      "valrhona jivara"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "main"
+  },
+  "chocolat blanc": {
+    "normalizing": [
+      "dulcey",
+      "dulcey valrhona",
+      "chocolat blanc de couverture à 35%",
+      "chocolat de couverture ivoire",
+      "couverture ivoire",
+      "couverture ivoire valrhona",
+      "couverture ivoire valrhona ou blanc zéphyr de barry",
+      "pistoles de couverture ivoire",
+      "pistole de couverture ivoire",
+      "pistoles zéphyr de barry"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "main"
+  },
+  "chocolat noir": {
+    "normalizing": [
+      "chocolat noir dessert",
+      "chocolatnoir",
+      "chocolat noir 70%",
+      "chocolat noir corsé",
+      "chocolat noir en pistoles",
+      "chocolat noir pointe de sel",
+      "chocolat noir à 66%",
+      "chocolat noir à 72%",
+      "chocolat à 60%",
+      "chocolat à 66%",
+      "chocolat à 70%",
+      "chocolat à 99%",
+      "chocolat corsé",
+      "chocolat dessert",
+      "chocolat",
+      "chocolat \"le noir 61%\" de valrhona",
+      "chocolat \"le noir\" 61%",
+      "pistole de chocolat",
+      "pistoles de chocolat",
+      "carrés de chocolat"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "main"
+  },
+  "chorizo": {
+    "normalizing": [
+      "chorizo doux"
+    ],
+    "category": "Viandes & Poissons",
+    "weight": "flavoring"
+  },
+  "chou blanc": {
+    "normalizing": [],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "chou de bruxelles": {
+    "normalizing": [],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "chou kale": {
+    "normalizing": [
+      "kale",
+      "kale cru",
+      "baby kale",
+      "branche de chou kale",
+      "branches de chou kale",
+      "pousse de kale"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "chou rouge": {
+    "normalizing": [
+      "chou rouge émincé"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "chou": {
+    "normalizing": [
+      "chou cima",
+      "chou vert",
+      "chou rave",
+      "chou romanesco",
+      "fleurette de chou romanesco"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "chou-fleur": {
+    "normalizing": [],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "fromage de chèvre": {
+    "normalizing": [
+      "chèvre",
+      "fromage de chèvre sec",
+      "buche de chèvre",
+      "crottin de chavignol"
+    ],
+    "category": "Produits laitiers",
+    "weight": "flavoring"
+  },
+  "ciboulette": {
+    "normalizing": [
+      "ciboulette fraiche",
+      "ciboulette fraîche"
+    ],
+    "category": "Herbes",
+    "weight": "flavoring"
+  },
+  "citron": {
+    "normalizing": [
+      "citron jaune",
+      "jus de citron",
+      "citron bio",
+      "citron non traité",
+      "jus de citron jaune",
+      "pulpe de citron",
+      "zeste de citron",
+      "zeste de citron bio",
+      "zeste de citron jaune",
+      "zeste de citron jaune bio",
+      "zestes de citron",
+      "zestes de citron jaune bio",
+      "lemon juice"
+    ],
+    "category": "Fruits",
+    "weight": "flavoring"
+  },
+  "citron confit": {
+    "normalizing": [
+      "écorce de citron confit",
+      "écorce de citron confit beldi",
+      "écorce de citron"
+    ],
+    "category": "Fruits",
+    "weight": "flavoring"
+  },
+  "citron vert": {
+    "normalizing": [
+      "lime",
+      "jus de citron vert",
+      "zeste citron vert",
+      "zeste de citron vert",
+      "zestes de citron vert"
+    ],
+    "category": "Fruits",
+    "weight": "flavoring"
+  },
+  "citronnelle": {
+    "normalizing": [
+      "citronnelle ciselée",
+      "bâton de citronnelle"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "clémentine": {
+    "normalizing": [
+      "jus de clémentine",
+      "zestes de clémentine",
+      "zestes de clémentines"
+    ],
+    "category": "Fruits",
+    "weight": "main"
+  },
+  "clou de girofle": {
+    "normalizing": [
+      "clou de girofle moulu",
+      "girofle",
+      "girofle moulue"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "colorant alimentaire": {
+    "normalizing": [
+      "colorant rouge",
+      "colorant en poudre doré",
+      "colorant"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "coing": {
+    "normalizing": [],
+    "category": "Fruits",
+    "weight": "main"
+  },
+  "pomme": {
+    "normalizing": [
+      "pommes",
+      "compote de pommes",
+      "pomme golden",
+      "compote de pommes sans sucre ajouté",
+      "compote pommes-clémentines",
+      "pommes golden",
+      "pomme granny smith",
+      "pomme verte",
+      "pommes pink lady"
+    ],
+    "category": "Fruits",
+    "weight": "main"
+  },
+  "fromage de vache": {
+    "normalizing": [
+      "fromage",
+      "comté",
+      "beaufort",
+      "comté râpé",
+      "cantal",
+      "abondance",
+      "cantal râpé",
+      "tomme de montagne",
+      "tomme de savoie",
+      "appenzeller",
+      "camembert",
+      "camembert de campagne",
+      "cheddar",
+      "mimolette",
+      "morbier",
+      "fourme",
+      "fourme de montbrison",
+      "rocamadour",
+      "saint-nectaire",
+      "saint nectaire",
+      "fontina",
+      "scamorza",
+      "scamorza fumée"
+    ],
+    "category": "Produits laitiers",
+    "weight": "flavoring"
+  },
+  "concentré de tomate": {
+    "normalizing": [
+      "concentré de tomates"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "concombre": {
+    "normalizing": [
+      "mini concombre"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "confiture": {
+    "normalizing": [
+      "confiture d'abricot",
+      "confiture de fraise",
+      "confiture de fraises très peu sucrée",
+      "confiture de framboise",
+      "confiture de framboises"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "flavoring"
+  },
+  "coriandre": {
+    "normalizing": [
+      "coriandre fraîche",
+      "coriandre ciselée",
+      "feuille de coriandre",
+      "feuilles de coriandre",
+      "coriandre thaï"
+    ],
+    "category": "Herbes",
+    "weight": "flavoring"
+  },
+  "coriandre en poudre": {
+    "normalizing": [
+      "coriandre moulue",
+      "graine de coriandre",
+      "graines de coriandre"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "cornichon": {
+    "normalizing": [
+      "pickles de concombre"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "courge": {
+    "normalizing": [
+      "courge muscade",
+      "pâtisson",
+      "purée de courge",
+      "patidou",
+      "courge spaghetti"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "courgette": {
+    "normalizing": [
+      "courgettes",
+      "fleur de courgette"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "crème de balsamique": {
+    "normalizing": [
+      "crème de balsamique blanc",
+      "crème de vinaigre balsamique"
+    ],
+    "category": "Alcools & Vinaigres",
+    "weight": "flavoring"
+  },
+  "crème de marrons": {
+    "normalizing": [
+      "crème de marron",
+      "marron glacé",
+      "marrons glacés",
+      "marron confit",
+      "marrons confits"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "main"
+  },
+  "crème fleurette": {
+    "normalizing": [
+      "crème fleurette entière",
+      "crème fleurette bien froide",
+      "crème fleurette entière très froide",
+      "crème fleurette ou crème liquide entière",
+      "crème fleurette ou crème liquide entière bien froide",
+      "crème fleurette à 35% ou crème liquide entière"
+    ],
+    "category": "Produits laitiers",
+    "weight": "base"
+  },
+  "crème fraîche": {
+    "normalizing": [
+      "crème de coco",
+      "crème végétale",
+      "crème de soja",
+      "crème fraîche entière",
+      "crème fraîche épaisse",
+      "crème épaisse",
+      "crème entière épaisse"
+    ],
+    "category": "Produits laitiers",
+    "weight": "base"
+  },
+  "crème liquide": {
+    "normalizing": [
+      "crème à fouetter et mascarpone elle & vire",
+      "crème à fouetter et mascarpone elle&vire",
+      "creme liquide",
+      "crème liquide entière",
+      "crème liquide entière froide",
+      "crème liquide entière très froide",
+      "crème entière liquide",
+      "crème",
+      "crème allégée",
+      "crème classique",
+      "crème classique ou végétale",
+      "crème entière",
+      "crème légère",
+      "crème double"
+    ],
+    "category": "Produits laitiers",
+    "weight": "base"
+  },
+  "crémant": {
+    "normalizing": [
+      "champagne",
+      "prosecco"
+    ],
+    "category": "Alcools & Vinaigres",
+    "weight": "flavoring"
+  },
+  "crêpes dentelles": {
+    "normalizing": [
+      "crêpe gavotte",
+      "crêpes dentelle \"gavottes\"",
+      "gavotte",
+      "gavottes",
+      "brisures de crêpes dentelles"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "crevette": {
+    "normalizing": [
+      "crevettes",
+      "crevette décortiquée",
+      "crevettes cuites",
+      "crevettes crues décortiquées"
+    ],
+    "category": "Viandes & Poissons",
+    "weight": "main"
+  },
+  "cumin": {
+    "normalizing": [
+      "cumin en poudre",
+      "cumin moulu",
+      "graine de cumin",
+      "graine de cumin torréfiée",
+      "graines de cumin"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "curcuma": {
+    "normalizing": [],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "curry": {
+    "normalizing": [
+      "curry en poudre"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "datte": {
+    "normalizing": [
+      "datte medjool",
+      "dattes ultra moelleuses"
+    ],
+    "category": "Fruits",
+    "weight": "main"
+  },
+  "eau": {
+    "normalizing": [
+      "eau chaude",
+      "eau froide",
+      "eau tiède",
+      "eau très froide",
+      "eau de source",
+      "eau de source tiède",
+      "eau filtrée",
+      "eau minerale",
+      "eau minérale",
+      "eau minérale ou de source",
+      "water"
+    ],
+    "category": "Autres",
+    "weight": "base"
+  },
+  "emmental": {
+    "normalizing": [
+      "emmental râpé",
+      "emmenthal",
+      "emmenthal râpé"
+    ],
+    "category": "Produits laitiers",
+    "weight": "flavoring"
+  },
+  "endive": {
+    "normalizing": [
+      "endives",
+      "endive rouge"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "épinard": {
+    "normalizing": [
+      "épinards",
+      "epinard",
+      "epinards",
+      "épinard frais",
+      "épinards frais",
+      "épinards surgelés",
+      "pousse d'épinard",
+      "pousses d'épinard",
+      "pousses d'épinard",
+      "pousses d'épinard ou de roquette"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "épices pour pain d'épices": {
+    "normalizing": [
+      "mélange pour pain d'épices",
+      "mélange d'épices pour pain d'épices",
+      "épice pour pain d'épices",
+      "épice à pain d'épice",
+      "épice à pain d'épices",
+      "épices pour pain d'épices",
+      "épices pour pumpkin pie ou pain d'épices",
+      "épices à pain d'épice"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "estragon": {
+    "normalizing": [],
+    "category": "Herbes",
+    "weight": "flavoring"
+  },
+  "faisselle": {
+    "normalizing": [
+      "faisselle de chevre"
+    ],
+    "category": "Produits laitiers",
+    "weight": "flavoring"
+  },
+  "fanes de légumes": {
+    "normalizing": [
+      "fanes de carottes",
+      "fanes de radis"
+    ],
+    "category": "Légumes",
+    "weight": "flavoring"
+  },
+  "farine": {
+    "normalizing": [
+      "farine de sésame",
+      "mix c de schär",
+      "farine de riz",
+      "farine de lentilles vertes",
+      "farine d'epeautre",
+      "farine d'épeautre",
+      "farine d'épeautre intégrale",
+      "farine d'épeautre",
+      "farine d'avoine",
+      "farine de maïs",
+      "farine de lentilles",
+      "farine classique",
+      "farine avec levure",
+      "farine avec levure incorporée",
+      "farine de blé",
+      "farine à gâteaux"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "farine d'amande": {
+    "normalizing": [
+      "farine d'amandes",
+      "farinedamandes"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "farine de blé t45": {
+    "normalizing": [
+      "farine de force",
+      "farine de gruau",
+      "farine de type 45",
+      "farine riche en gluten",
+      "farine type 45",
+      "farine tout usage",
+      "farine tout usage t45",
+      "farine 00",
+      "farine 00 ou t45"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "farine de blé t55": {
+    "normalizing": [
+      "farine t55",
+      "farine de type 55",
+      "farine type 55"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "farine de blé t65": {
+    "normalizing": [
+      "farine de blé T65",
+      "farine de blé t65",
+      "farine t65",
+      "farine de blé type 65"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "farine de blé t80": {
+    "normalizing": [
+      "farine T80",
+      "farine t80",
+      "farine semi complète",
+      "farine semi-complète",
+      "farine de blé t80",
+      "farine buratto ou t80",
+      "farine de blé bise",
+      "farine de blé complète"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "farine de châtaigne": {
+    "normalizing": [
+      "farine de châtaignes"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "flavoring"
+  },
+  "farine de coco": {
+    "normalizing": [],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "maizena": {
+    "normalizing": [
+      "maïzena",
+      "fécule de maïs"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "farine de petit épeautre": {
+    "normalizing": [
+      "farine de petit épeautre intégrale"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "farine de pois chiche": {
+    "normalizing": [
+      "farine de pois chiches"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "farine de sarrasin": {
+    "normalizing": [],
+    "category": "Sucres & Pâtisserie",
+    "weight": "flavoring"
+  },
+  "farine de seigle": {
+    "normalizing": [],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "farine de teff": {
+    "normalizing": [
+      "farineteff",
+      "farine de teff blanc",
+      "farine de teff blanc ou de sarrasin",
+      "farine de teff blanche"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "fenouil": {
+    "normalizing": [
+      "bulbe de fenouil"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "feta": {
+    "normalizing": [
+      "féta",
+      "fêta"
+    ],
+    "category": "Produits laitiers",
+    "weight": "flavoring"
+  },
+  "feuille de gélatine": {
+    "normalizing": [
+      "gélatine",
+      "gélatine 200 bloom",
+      "gélatine 200 bloom en poudre",
+      "gélatine en feuille ou en poudre",
+      "gélatine en poudre",
+      "gélatine en poudre 200 bloom"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "feuille de laurier": {
+    "normalizing": [
+      "feuilles de laurier",
+      "laurier"
+    ],
+    "category": "Autres",
+    "weight": "flavoring"
+  },
+  "figue": {
+    "normalizing": [
+      "figues",
+      "figues fraîches",
+      "figue séchée",
+      "figues séchées"
+    ],
+    "category": "Fruits",
+    "weight": "main"
+  },
+  "flageolet": {
+    "normalizing": [
+      "flageolet sec"
+    ],
+    "category": "Légumineuses",
+    "weight": "main"
+  },
+  "fleur de sel": {
+    "normalizing": [
+      "gros sel",
+      "gros sel/fleur de sel"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "flocon de céréale": {
+    "normalizing": [
+      "corn flakes",
+      "corn flake nature",
+      "corn flakes nature",
+      "flocon d'avoine",
+      "flocons d'avoine",
+      "flocons d'avoine",
+      "flocon d'orge",
+      "flocon de seigle",
+      "flocon de riz"
+    ],
+    "category": "Féculents & Céréales",
+    "weight": "base"
+  },
+  "fraise": {
+    "normalizing": [
+      "fraises",
+      "purée de fraise",
+      "jus de fraise",
+      "fraise française",
+      "fraises des bois",
+      "fraise fraîche",
+      "fraises fraîches",
+      "fraises gariguettes de plougastel"
+    ],
+    "category": "Fruits",
+    "weight": "main"
+  },
+  "framboise": {
+    "normalizing": [
+      "framboises",
+      "purée de framboise",
+      "coulis de framboise",
+      "coulis framboise",
+      "framboise fraîche",
+      "framboises fraîches",
+      "framboises surgelées"
+    ],
+    "category": "Fruits",
+    "weight": "main"
+  },
+  "fromage blanc": {
+    "normalizing": [
+      "fromage blanc nature",
+      "fromage blanc ou yaourt grec"
+    ],
+    "category": "Produits laitiers",
+    "weight": "base"
+  },
+  "fromage de brebis": {
+    "normalizing": [
+      "tome de brebis",
+      "tomme de brebis",
+      "tomme de chèvre",
+      "ossau-iraty",
+      "ossau iraty aop istara"
+    ],
+    "category": "Produits laitiers",
+    "weight": "flavoring"
+  },
+  "fromage frais": {
+    "normalizing": [
+      "cream cheese",
+      "fromage philadelphia",
+      "philadelphia",
+      "fromage de brebis frais",
+      "chèvre frais",
+      "fromage de chèvre frais",
+      "boursin",
+      "boursin cuisine",
+      "cottage cheese"
+    ],
+    "category": "Produits laitiers",
+    "weight": "base"
+  },
+  "fromage râpé": {
+    "normalizing": [],
+    "category": "Produits laitiers",
+    "weight": "flavoring"
+  },
+  "fruit de la passion": {
+    "normalizing": [
+      "purée de fruits de la passion",
+      "jus de fruits de la passion",
+      "purée passion"
+    ],
+    "category": "Fruits",
+    "weight": "main"
+  },
+  "fruits rouges": {
+    "normalizing": [
+      "fruit rouge",
+      "fruits rouges de saison"
+    ],
+    "category": "Fruits",
+    "weight": "main"
+  },
+  "fève": {
+    "normalizing": [
+      "fèves"
+    ],
+    "category": "Légumineuses",
+    "weight": "main"
+  },
+  "fève tonka": {
+    "normalizing": [],
+    "category": "Sucres & Pâtisserie",
+    "weight": "flavoring"
+  },
+  "fécule de pomme de terre": {
+    "normalizing": [
+      "fécule de pommes de terre",
+      "fécule"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "gambas": {
+    "normalizing": [
+      "gamba",
+      "gambas cuites",
+      "gamba cuite"
+    ],
+    "category": "Viandes & Poissons",
+    "weight": "main"
+  },
+  "gingembre": {
+    "normalizing": [
+      "gingembre frais",
+      "gingembre frais râpé",
+      "gingembre râpé",
+      "ginger",
+      "gingembre mariné"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "gingembre en poudre": {
+    "normalizing": [
+      "gingembre moulu"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "gorgonzola": {
+    "normalizing": [],
+    "category": "Produits laitiers",
+    "weight": "flavoring"
+  },
+  "gousse de vanille": {
+    "normalizing": [
+      "gousse de vanille de tahiti",
+      "gousse vanille",
+      "gousses de vanille",
+      "graines de vanille",
+      "graines d'une gousse de vanille"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "flavoring"
+  },
+  "graine de courge": {
+    "normalizing": [
+      "graines de courge",
+      "graines de butternut",
+      "graines de potimarron"
+    ],
+    "category": "Fruits secs & Graines",
+    "weight": "flavoring"
+  },
+  "graine de lin": {
+    "normalizing": [
+      "graines de lin",
+      "graine de lin brun",
+      "graines de lin moulues"
+    ],
+    "category": "Fruits secs & Graines",
+    "weight": "flavoring"
+  },
+  "graine de moutarde": {
+    "normalizing": [
+      "grains de moutarde",
+      "graines de moutarde"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "graine de pavot": {
+    "normalizing": [
+      "graines de pavot"
+    ],
+    "category": "Fruits secs & Graines",
+    "weight": "flavoring"
+  },
+  "graine de sésame": {
+    "normalizing": [
+      "graines de sésame",
+      "graines de sésames",
+      "grains de sésames",
+      "sésame",
+      "sésame blanc",
+      "sésame noir",
+      "sésame noir et blanc",
+      "sésames",
+      "graine de sésame blanc"
+    ],
+    "category": "Fruits secs & Graines",
+    "weight": "flavoring"
+  },
+  "graine de tournesol": {
+    "normalizing": [
+      "graines de tournesol"
+    ],
+    "category": "Fruits secs & Graines",
+    "weight": "flavoring"
+  },
+  "groseille": {
+    "normalizing": [
+      "groseilles"
+    ],
+    "category": "Fruits",
+    "weight": "main"
+  },
+  "gruyère": {
+    "normalizing": [
+      "gruyère de france",
+      "gruyère des alpages",
+      "gruyère râpé"
+    ],
+    "category": "Produits laitiers",
+    "weight": "flavoring"
+  },
+  "halloumi": {
+    "normalizing": [],
+    "category": "Produits laitiers",
+    "weight": "flavoring"
+  },
+  "haricot blanc": {
+    "normalizing": [
+      "haricot tarbais",
+      "haricot tarbais sec"
+    ],
+    "category": "Légumineuses",
+    "weight": "main"
+  },
+  "haricot rouge": {
+    "normalizing": [
+      "haricots azukis"
+    ],
+    "category": "Légumineuses",
+    "weight": "main"
+  },
+  "haricot vert": {
+    "normalizing": [
+      "haricots verts"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "harissa": {
+    "normalizing": [],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "herbes de provence": {
+    "normalizing": [
+      "herbe de provence"
+    ],
+    "category": "Herbes",
+    "weight": "flavoring"
+  },
+  "huile d'olive": {
+    "normalizing": [
+      "huile d'olive",
+      "huile d'olive",
+      "huile d'olive extra vierge",
+      "huile d'olive extra vierge bio",
+      "huile d'olive vierge extra",
+      "huile olive",
+      "filet d'huile d'olive"
+    ],
+    "category": "Huiles & Matières grasses",
+    "weight": "flavoring"
+  },
+  "huile de coco": {
+    "normalizing": [
+      "huilecoco",
+      "huile de coco fondue"
+    ],
+    "category": "Huiles & Matières grasses",
+    "weight": "flavoring"
+  },
+  "huile de noix": {
+    "normalizing": [],
+    "category": "Huiles & Matières grasses",
+    "weight": "flavoring"
+  },
+  "huile de sésame": {
+    "normalizing": [
+      "huile de sésame grillée",
+      "filet d'huile de sésame"
+    ],
+    "category": "Huiles & Matières grasses",
+    "weight": "flavoring"
+  },
+  "huile neutre": {
+    "normalizing": [
+      "huile de tournesol",
+      "huile de tournesol ou de colza",
+      "huile tournesol",
+      "huile de colza",
+      "huile de colza ou tournesol",
+      "huile de colza ou tournesol ou pépins de raisins",
+      "huile",
+      "huile végétale",
+      "huile de cuisson",
+      "huile de friture",
+      "huile pour friture",
+      "huile pimentée",
+      "huile neutre de pépins de raisins ou de tournesol",
+      "huile neutre pépins de raisins",
+      "huile de pépin de raisin",
+      "huile de pépins de raisin",
+      "huile de pépins de raisin",
+      "huile de pépins de raisins",
+      "huile de pépins de raisins ou de tournesol",
+      "huile d'arachide",
+      "huile d'argan"
+    ],
+    "category": "Huiles & Matières grasses",
+    "weight": "base"
+  },
+  "jambon cru": {
+    "normalizing": [
+      "jambon cru de parme",
+      "jambon de bayonne",
+      "jambon de parme",
+      "jambon de savoie",
+      "jambon ibérique bellota",
+      "jambon sec",
+      "tranches de jambon cru"
+    ],
+    "category": "Viandes & Poissons",
+    "weight": "main"
+  },
+  "jambon cuit": {
+    "normalizing": [
+      "jambon"
+    ],
+    "category": "Viandes & Poissons",
+    "weight": "main"
+  },
+  "jaune d'oeuf": {
+    "normalizing": [
+      "jaune d'œuf",
+      "jaune d'œuf",
+      "jaune d'œuf tempéré",
+      "jaune d'oeuf dur",
+      "jaunes d'oeuf",
+      "jaunes d'oeufs",
+      "jaunes d'oeufs tempérés",
+      "jaunes d'œufs",
+      "jaunes d'œufs",
+      "jaunes d'œufs",
+      "jaune d'œuf"
+    ],
+    "category": "Autres",
+    "weight": "base"
+  },
+  "kaki": {
+    "normalizing": [
+      "kaki persimon"
+    ],
+    "category": "Fruits",
+    "weight": "main"
+  },
+  "kirsch": {
+    "normalizing": [],
+    "category": "Alcools & Vinaigres",
+    "weight": "flavoring"
+  },
+  "kiwi": {
+    "normalizing": [],
+    "category": "Fruits",
+    "weight": "main"
+  },
+  "lait": {
+    "normalizing": [
+      "lait demi-écrémé",
+      "lait de chèvre",
+      "lait de brebis",
+      "lait demi-écrémé ou entier",
+      "lait demi-écrémé tiède",
+      "lait entier",
+      "lait entier ou demi-écrémé",
+      "lait frais entier",
+      "lait froid",
+      "lait tiède",
+      "lait de vache"
+    ],
+    "category": "Produits laitiers",
+    "weight": "base"
+  },
+  "lait concentré sucré": {
+    "normalizing": [
+      "lait concentré",
+      "lait concentré non sucré entier"
+    ],
+    "category": "Produits laitiers",
+    "weight": "base"
+  },
+  "lait végétal": {
+    "normalizing": [
+      "lait de noisette",
+      "lait de noisette ou lait classique",
+      "lait d'amande",
+      "lait d'avoine",
+      "lait ou lait végétal",
+      "lait de soja",
+      "lait de vache ou d'amandes",
+      "lait demi-écrémé ou lait d'amandes sans sucre ajouté",
+      "lait d'amandes",
+      "laitamandes",
+      "lait d'amande sans sucre ajouté",
+      "lait d'amandes sans sucre ajouté",
+      "boisson végétale aux amandes"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "lait de coco": {
+    "normalizing": [
+      "boisson coco",
+      "light coconut milk"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "flavoring"
+  },
+  "lait en poudre": {
+    "normalizing": [
+      "lait en poudre à 0%",
+      "lait entier en poudre",
+      "poudre de lait"
+    ],
+    "category": "Produits laitiers",
+    "weight": "base"
+  },
+  "lait fermenté": {
+    "normalizing": [
+      "lait ribot"
+    ],
+    "category": "Produits laitiers",
+    "weight": "base"
+  },
+  "langoustine": {
+    "normalizing": [
+      "langoustine crue"
+    ],
+    "category": "Viandes & Poissons",
+    "weight": "main"
+  },
+  "lard fumé": {
+    "normalizing": [
+      "lardons fumés",
+      "bacon de poitrine fumée",
+      "pancetta"
+    ],
+    "category": "Viandes & Poissons",
+    "weight": "flavoring"
+  },
+  "lavande": {
+    "normalizing": [
+      "fleurs de lavande",
+      "grain de lavande"
+    ],
+    "category": "Herbes",
+    "weight": "flavoring"
+  },
+  "lentille beluga": {
+    "normalizing": [
+      "lentille noire",
+      "lentille beluga crue"
+    ],
+    "category": "Légumineuses",
+    "weight": "main"
+  },
+  "lentille corail": {
+    "normalizing": [
+      "lentilles corail"
+    ],
+    "category": "Légumineuses",
+    "weight": "main"
+  },
+  "lentille": {
+    "normalizing": [
+      "lentille verte",
+      "lentille verte sèche",
+      "lentille blonde"
+    ],
+    "category": "Légumineuses",
+    "weight": "main"
+  },
+  "levure boulangère": {
+    "normalizing": [
+      "levure boulangère fraîche",
+      "levure boulangère sèche",
+      "levure boulangère sèche active",
+      "levure de boulanger",
+      "levure de boulanger fraîche",
+      "levure de boulanger sèche",
+      "levure de boulangerie",
+      "levure fraîche",
+      "levure",
+      "levure fraîche boulangère",
+      "levure fraîche de boulanger",
+      "levure sèche"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "levure chimique": {
+    "normalizing": [
+      "poudre à lever"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "linguine": {
+    "normalizing": [],
+    "category": "Féculents & Céréales",
+    "weight": "base"
+  },
+  "macaroni": {
+    "normalizing": [
+      "macaronis"
+    ],
+    "category": "Féculents & Céréales",
+    "weight": "base"
+  },
+  "mangue": {
+    "normalizing": [
+      "mangue mûre mais assez ferme",
+      "purée de mangue"
+    ],
+    "category": "Fruits",
+    "weight": "main"
+  },
+  "margarine": {
+    "normalizing": [
+      "crisco"
+    ],
+    "category": "Huiles & Matières grasses",
+    "weight": "base"
+  },
+  "marmelade d'orange": {
+    "normalizing": [
+      "marmelade d'orange non sucrée"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "flavoring"
+  },
+  "mascarpone": {
+    "normalizing": [],
+    "category": "Produits laitiers",
+    "weight": "base"
+  },
+  "mayonnaise": {
+    "normalizing": [],
+    "category": "Huiles & Matières grasses",
+    "weight": "flavoring"
+  },
+  "melon": {
+    "normalizing": [],
+    "category": "Fruits",
+    "weight": "main"
+  },
+  "menthe": {
+    "normalizing": [
+      "menthe fraiche",
+      "menthe fraîche",
+      "menthe ciselée",
+      "menthe ou coriandre fraîche",
+      "feuille de menthe",
+      "feuille de menthe fraîche",
+      "feuilles de menthe",
+      "feuilles de menthe fraîche",
+      "fresh mint leaf",
+      "branche de menthe"
+    ],
+    "category": "Herbes",
+    "weight": "flavoring"
+  },
+  "salade": {
+    "normalizing": [
+      "salade mélangée",
+      "feuilles de salade",
+      "salade",
+      "salade verte",
+      "feuille d'iceberg",
+      "feuille de chêne",
+      "feuille de chêne rouge",
+      "feuille de chêne verte",
+      "feuille de laitue",
+      "feuille de sucrine"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "mesclun": {
+    "normalizing": [],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "miel": {
+    "normalizing": [
+      "miel d'acacia",
+      "miel de châtaignes",
+      "miel de châtaignier",
+      "miel de fleurs",
+      "miel liquide"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "flavoring"
+  },
+  "mirabelle": {
+    "normalizing": [
+      "mirabelles"
+    ],
+    "category": "Fruits",
+    "weight": "main"
+  },
+  "miso": {
+    "normalizing": [
+      "miso rouge",
+      "pâte de miso blanc",
+      "miso broth cube"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "moutarde": {
+    "normalizing": [
+      "moutarde de dijon",
+      "moutarde douce",
+      "moutarde fine forte",
+      "moutarde forte",
+      "moutarde forte de dijon",
+      "moutarde au miel"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "moutarde à l'ancienne": {
+    "normalizing": [
+      "moutarde a l'ancienne",
+      "moutarde à l'ancienne",
+      "moutarde à l'ancienne"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "mozzarella": {
+    "normalizing": [
+      "mozzarella di bufala"
+    ],
+    "category": "Produits laitiers",
+    "weight": "flavoring"
+  },
+  "muscade": {
+    "normalizing": [
+      "noix de muscade",
+      "noix de muscade moulue",
+      "muscade moulue",
+      "nutmeg"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "baies noires": {
+    "normalizing": [
+      "myrtilles",
+      "airelles",
+      "airelle",
+      "mûres",
+      "mûre",
+      "myrtille"
+    ],
+    "category": "Fruits",
+    "weight": "main"
+  },
+  "mâche": {
+    "normalizing": [
+      "feuille de mâche"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "mélasse": {
+    "normalizing": [
+      "mélasse de sucre de canne"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "flavoring"
+  },
+  "grenade": {
+    "normalizing": [
+      "mélasse de grenade",
+      "grenade",
+      "grenadine",
+      "graine de grenade",
+      "graines de grenade"
+    ],
+    "category": "Fruits",
+    "weight": "main"
+  },
+  "navet": {
+    "normalizing": [
+      "navet boule d'or",
+      "navet boule d'or",
+      "rutabaga",
+      "chou rave",
+      "panais"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "nectarine": {
+    "normalizing": [
+      "nectarine jaune",
+      "nectarines"
+    ],
+    "category": "Fruits",
+    "weight": "main"
+  },
+  "noisette": {
+    "normalizing": [
+      "noisettes",
+      "noisette entière",
+      "noisettes entières",
+      "noisette concassée",
+      "noisettes concassées",
+      "noisette décortiquée",
+      "noisette torréfiée",
+      "noisettes torréfiées",
+      "noisettes grillées",
+      "noisettes hachées",
+      "noisette grillée et concassée",
+      "noisettes hâchées et grillées",
+      "hazelnuts"
+    ],
+    "category": "Fruits secs & Graines",
+    "weight": "flavoring"
+  },
+  "purée de noisette": {
+    "normalizing": [
+      "purée de noisette",
+      "purée de noisettes",
+      "crème de noisette"
+    ],
+    "category": "Fruits secs & Graines",
+    "weight": "flavoring"
+  },
+  "noisette en poudre": {
+    "normalizing": [
+      "noisettes en poudre",
+      "poudre de noisette",
+      "poudre de noisette torréfiée",
+      "poudre de noisettes"
+    ],
+    "category": "Fruits secs & Graines",
+    "weight": "base"
+  },
+  "noix": {
+    "normalizing": [
+      "noix concassées",
+      "noix torréfiée",
+      "cerneau de noix",
+      "cerneaux de noix",
+      "cerneraux de noix",
+      "nois"
+    ],
+    "category": "Fruits secs & Graines",
+    "weight": "flavoring"
+  },
+  "noix de cajou": {
+    "normalizing": [
+      "purée de noix de cajou",
+      "purée de cajou"
+    ],
+    "category": "Fruits secs & Graines",
+    "weight": "flavoring"
+  },
+  "noix de coco": {
+    "normalizing": [
+      "noix de coco râpée",
+      "noix de coco râpée torréfiée",
+      "noix de coco torréfiée",
+      "copeau de coco",
+      "copeau de noix de coco",
+      "copeaux de noix de coco",
+      "chip de noix de coco",
+      "chips de coco",
+      "poudre de coco",
+      "shredded coconut"
+    ],
+    "category": "Fruits secs & Graines",
+    "weight": "flavoring"
+  },
+  "noix de pécan": {
+    "normalizing": [
+      "noix de pecan",
+      "noix de pécan mixée",
+      "noix de pécan torréfiées et concassées",
+      "poudre de noix de pécan"
+    ],
+    "category": "Fruits secs & Graines",
+    "weight": "flavoring"
+  },
+  "noix de saint-jacques": {
+    "normalizing": [
+      "saint-jacques"
+    ],
+    "category": "Viandes & Poissons",
+    "weight": "main"
+  },
+  "nouilles": {
+    "normalizing": [
+      "nouille de riz",
+      "rice noodle",
+      "nouille",
+      "nouilles de soba",
+      "nouille soba",
+      "nouille udon",
+      "nouilles chinoises",
+      "nouilles ramen"
+    ],
+    "category": "Féculents & Céréales",
+    "weight": "base"
+  },
+  "oeuf": {
+    "normalizing": [
+      "oeufs",
+      "œufs",
+      "œuf",
+      "gros oeuf",
+      "gros oeufs",
+      "oeuf battu",
+      "oeuf bio",
+      "oeuf bio extra-frais",
+      "oeuf entier",
+      "oeuf frais",
+      "oeuf tempéré",
+      "oeufs entiers",
+      "petit oeuf",
+      "œuf battu en omelette",
+      "œuf entier"
+    ],
+    "category": "Autres",
+    "weight": "base"
+  },
+  "oeuf de saumon/truite": {
+    "normalizing": [
+      "oeuf de saumon",
+      "oeufs de saumon",
+      "œufs de saumon",
+      "oeufs de truite"
+    ],
+    "category": "Viandes & Poissons",
+    "weight": "main"
+  },
+  "oignon": {
+    "normalizing": [
+      "oignons",
+      "oignon paille"
+    ],
+    "category": "Légumes",
+    "weight": "flavoring"
+  },
+  "oignon blanc": {
+    "normalizing": [],
+    "category": "Légumes",
+    "weight": "flavoring"
+  },
+  "oignon doux": {
+    "normalizing": [],
+    "category": "Légumes",
+    "weight": "flavoring"
+  },
+  "oignon jaune": {
+    "normalizing": [],
+    "category": "Légumes",
+    "weight": "flavoring"
+  },
+  "oignon nouveau": {
+    "normalizing": [
+      "oignons nouveaux",
+      "petit oignon nouveau",
+      "tige d'oignon nouveau"
+    ],
+    "category": "Légumes",
+    "weight": "flavoring"
+  },
+  "oignon rouge": {
+    "normalizing": [
+      "oignon nouveau rouge",
+      "red onion",
+      "pickle d'oignon rouge"
+    ],
+    "category": "Légumes",
+    "weight": "flavoring"
+  },
+  "olive noire": {
+    "normalizing": [
+      "olives noires",
+      "olive",
+      "olive kalamata",
+      "olive noire à la grecque",
+      "olive taggiasche",
+      "olive violette"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "olive verte": {
+    "normalizing": [
+      "olives vertes",
+      "olive verte dénoyautée"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "orange": {
+    "normalizing": [
+      "orange bio",
+      "jus d'orange",
+      "quartier d'orange",
+      "zeste d'orange",
+      "zeste d'orange bio",
+      "zestes d'orange",
+      "zestes d'orange bio",
+      "zests d'orange",
+      "zestes d'orange ou de citron",
+      "écorce d'orange bio"
+    ],
+    "category": "Fruits",
+    "weight": "main"
+  },
+  "orange sanguine": {
+    "normalizing": [
+      "blood orange"
+    ],
+    "category": "Fruits",
+    "weight": "main"
+  },
+  "origan": {
+    "normalizing": [
+      "origan frais",
+      "origan séché",
+      "feuille d'origan frais",
+      "branche d'origan",
+      "marjolaine"
+    ],
+    "category": "Herbes",
+    "weight": "flavoring"
+  },
+  "petites pâtes de blé/sarrasin dur": {
+    "normalizing": [
+      "pâte orzo",
+      "orzo",
+      "pâtes orzo",
+      "fregola",
+      "riso",
+      "crozet",
+      "crozets alpina au sarrasin"
+    ],
+    "category": "Féculents & Céréales",
+    "weight": "base"
+  },
+  "pain": {
+    "normalizing": [
+      "pain à burger",
+      "pain à hamburger",
+      "mie de pain",
+      "pain a hamburger",
+      "bun",
+      "pain au levain",
+      "brioche",
+      "focaccia",
+      "baguette",
+      "pain de campagne",
+      "pain grillé",
+      "pain rassis",
+      "tranche de pain",
+      "tranche de pain fine",
+      "tartine de pain",
+      "croûton"
+    ],
+    "category": "Féculents & Céréales",
+    "weight": "base"
+  },
+  "pain de mie": {
+    "normalizing": [
+      "pain de mie complet"
+    ],
+    "category": "Féculents & Céréales",
+    "weight": "base"
+  },
+  "pain pita": {
+    "normalizing": [
+      "pita",
+      "tortilla",
+      "tortilla de maïs"
+    ],
+    "category": "Féculents & Céréales",
+    "weight": "base"
+  },
+  "pamplemousse": {
+    "normalizing": [
+      "pomelo",
+      "pomelo corse",
+      "jus de pamplemousse",
+      "zestes de pamplemousse"
+    ],
+    "category": "Fruits",
+    "weight": "main"
+  },
+  "paprika": {
+    "normalizing": [
+      "paprika doux"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "paprika fumé": {
+    "normalizing": [
+      "paprika fumé en poudre"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "parmesan": {
+    "normalizing": [
+      "parmesan râpé",
+      "parmesan fraîchement râpé"
+    ],
+    "category": "Produits laitiers",
+    "weight": "flavoring"
+  },
+  "pastèque": {
+    "normalizing": [],
+    "category": "Fruits",
+    "weight": "main"
+  },
+  "patate douce": {
+    "normalizing": [
+      "sweet potato"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "pâte brisée": {
+    "normalizing": [
+      "pâte brisée sucrée"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "pâte de pistache": {
+    "normalizing": [
+      "pâte de pistache pure",
+      "pâte/praliné de pistaches",
+      "arôme pistache"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "flavoring"
+  },
+  "pâte feuilletée": {
+    "normalizing": [
+      "pâte feuilletée inversée",
+      "pâte feuilletée pur beurre"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "pâte filo": {
+    "normalizing": [
+      "feuille de filo",
+      "feuille de pâte filo",
+      "feuille de brick"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "pâte à tartiner": {
+    "normalizing": [
+      "nocciolata",
+      "pâte à tartiner choc-noisettes sans lait",
+      "pâte à tartiner chocolat-noisettes"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "flavoring"
+  },
+  "pâtes": {
+    "normalizing": [
+      "bucatini",
+      "pates bucatini",
+      "pâtes rigatoni",
+      "pâtes pappardelle",
+      "mezzi rigatoni",
+      "penne rigate",
+      "conchiglie",
+      "farfalles",
+      "raviole du dauphiné",
+      "pâtes bucatini",
+      "pâte bucatini",
+      "pâtes courtes",
+      "pâtes longues",
+      "gnocchi",
+      "coquillette",
+      "coquillettes",
+      "pâtes de qualité",
+      "petites pâtes",
+      "macaroni",
+      "macaronis",
+      "penne",
+      "penne-rigate",
+      "pâtes penne"
+    ],
+    "category": "Féculents & Céréales",
+    "weight": "base"
+  },
+  "pectine": {
+    "normalizing": [
+      "pectine nh",
+      "pectine nh nappage",
+      "nappage pour tartes",
+      "gouttes de nappage neutre",
+      "pectine x58",
+      "pectine x58 ou pectine nh",
+      "nappage neutre",
+      "nappage neutre ou confiture d'abricot",
+      "nappage"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "pecorino": {
+    "normalizing": [
+      "pecorino pepato",
+      "pecorino romano",
+      "pecorino romano râpé",
+      "pecorino râpé",
+      "pecorino toscano",
+      "copeaux de pecorino",
+      "fiore sardo"
+    ],
+    "category": "Produits laitiers",
+    "weight": "flavoring"
+  },
+  "pépites de chocolat": {
+    "normalizing": [
+      "pépite de chocolat",
+      "pépites de chocolat noir",
+      "chunks au chocolat",
+      "fins granulés de chocolat",
+      "billes chocolatées",
+      "chocolate lover mix"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "flavoring"
+  },
+  "persil": {
+    "normalizing": [
+      "persil frais",
+      "persil ciselé",
+      "persil plat",
+      "persil plat ciselé",
+      "persil plat frais",
+      "persil ou thym frais",
+      "feuille de persil",
+      "feuille de persil plat",
+      "feuilles de persil",
+      "fresh parsley leaf"
+    ],
+    "category": "Herbes",
+    "weight": "flavoring"
+  },
+  "petit épeautre": {
+    "normalizing": [
+      "petit epeautre"
+    ],
+    "category": "Féculents & Céréales",
+    "weight": "base"
+  },
+  "petit pois": {
+    "normalizing": [
+      "petits pois",
+      "petit pois écossé",
+      "edamame"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "petit suisse": {
+    "normalizing": [],
+    "category": "Produits laitiers",
+    "weight": "base"
+  },
+  "pignon de pin": {
+    "normalizing": [
+      "pignons de pin",
+      "pignons de pins",
+      "pignon",
+      "pignons"
+    ],
+    "category": "Fruits secs & Graines",
+    "weight": "flavoring"
+  },
+  "piment": {
+    "normalizing": [
+      "pâte de piment",
+      "pâte de piment sambal oalek",
+      "piment en flocons",
+      "piment chili",
+      "piment en flocon",
+      "piment en paillette",
+      "piment en poudre",
+      "piment oiseau",
+      "piment oiseau en flocons",
+      "piment rouge",
+      "piment séché",
+      "piment séché en flocon",
+      "piment séché en poudre",
+      "piment vert",
+      "piment vert piquant",
+      "piments en flocons",
+      "piments verts",
+      "piments langue d'oiseau déshydratés",
+      "flocon de piment",
+      "flocons de piment",
+      "flocons de piments"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "piment d'espelette": {
+    "normalizing": [
+      "piment d'espelette aop"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "piment de cayenne": {
+    "normalizing": [
+      "piment de cayenne en poudre",
+      "piment de cayenne moulu"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "pistache": {
+    "normalizing": [
+      "pistaches",
+      "pistache entière",
+      "pistache non salée",
+      "pistache émondée",
+      "pistache émondée non salée",
+      "pistaches concassées",
+      "pistache concassée",
+      "pistaches entières émondées",
+      "pistaches émondées non salées"
+    ],
+    "category": "Fruits secs & Graines",
+    "weight": "flavoring"
+  },
+  "pistache en poudre": {
+    "normalizing": [
+      "poudre de pistache",
+      "poudre de pistaches"
+    ],
+    "category": "Fruits secs & Graines",
+    "weight": "flavoring"
+  },
+  "poire": {
+    "normalizing": [
+      "poires",
+      "poire williams"
+    ],
+    "category": "Fruits",
+    "weight": "main"
+  },
+  "poireau": {
+    "normalizing": [
+      "poireaux",
+      "blanc de poireau",
+      "pousse de poireau",
+      "feuilles de vert de poireaux"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "légumineuses anciennes": {
+    "normalizing": [
+      "pois carrés",
+      "pois carré",
+      "flageolet"
+    ],
+    "category": "Légumineuses",
+    "weight": "main"
+  },
+  "pois cassé": {
+    "normalizing": [
+      "pois cassés",
+      "pois cassé sec"
+    ],
+    "category": "Légumineuses",
+    "weight": "main"
+  },
+  "pois chiche": {
+    "normalizing": [
+      "pois chiches",
+      "pois chiche cuit",
+      "pois chiche sec",
+      "pois chiches cuits"
+    ],
+    "category": "Légumineuses",
+    "weight": "main"
+  },
+  "poivre": {
+    "normalizing": [
+      "poivre noir",
+      "poivre de Timut",
+      "poivre de timut",
+      "poivre vert",
+      "sel et poivre",
+      "poivre du moulin",
+      "poivre noir du moulin",
+      "grain de poivre noir",
+      "poivre blanc",
+      "black pepper",
+      "pepper"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "poivron": {
+    "normalizing": [
+      "poivron long",
+      "mini poivron",
+      "poivron vert",
+      "poivron jaune",
+      "poivron rouge",
+      "poivron grillé",
+      "poivron rouge grillé en saumure"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "polenta": {
+    "normalizing": [
+      "polenta précuite",
+      "semoule de mais",
+      "semoule de maïs"
+    ],
+    "category": "Féculents & Céréales",
+    "weight": "base"
+  },
+  "pomme de terre": {
+    "normalizing": [
+      "pommes de terre",
+      "purée de pommes de terre",
+      "petite pomme de terre",
+      "pomme de terre grenaille",
+      "pomme de terre primeur",
+      "fingerling potatoes"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "potimarron": {
+    "normalizing": [],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "potiron": {
+    "normalizing": [
+      "purée de potiron"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "maïs": {
+    "normalizing": [
+      "maïs doux",
+      "maïs frais"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "poudre à crème": {
+    "normalizing": [
+      "poudre à flan",
+      "poudre à flan ou maïzena"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "volaille": {
+    "normalizing": [
+      "dinde",
+      "cuisse de dinde",
+      "escalope de dinde",
+      "poulet",
+      "blanc de poulet",
+      "filet de poulet",
+      "filets de poulet",
+      "cuisse de poulet",
+      "haut de cuisse",
+      "haut de cuisse de poulet désossé",
+      "pilon de poulet",
+      "aiguillette de poulet"
+    ],
+    "category": "Viandes & Poissons",
+    "weight": "main"
+  },
+  "praliné": {
+    "normalizing": [
+      "praliné 50/50",
+      "praliné amande",
+      "praliné amande noisette",
+      "praliné noisette",
+      "praliné pécan",
+      "pralin",
+      "pralin en poudre",
+      "pralin maison",
+      "pâte de praliné",
+      "croustillant aux amandes",
+      "gianduja"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "flavoring"
+  },
+  "prune": {
+    "normalizing": [
+      "prune reine claude",
+      "prune rouge"
+    ],
+    "category": "Fruits",
+    "weight": "main"
+  },
+  "psyllium": {
+    "normalizing": [],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "tahini": {
+    "normalizing": [
+      "purée de sésame blanc",
+      "tahini",
+      "purée de sésame",
+      "pâte de sésame"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "pêche": {
+    "normalizing": [
+      "pêches",
+      "pêche plate",
+      "purée de pêche"
+    ],
+    "category": "Fruits",
+    "weight": "main"
+  },
+  "quatre-épices": {
+    "normalizing": [
+      "4 ou 5 épices",
+      "4 épices",
+      "5 épices",
+      "mélange 4 épices",
+      "mélange quatre-épices",
+      "quatre épices"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "quinoa": {
+    "normalizing": [
+      "quinoa rouge"
+    ],
+    "category": "Féculents & Céréales",
+    "weight": "base"
+  },
+  "radis": {
+    "normalizing": [
+      "radis rose",
+      "radis rouge"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "radis noir": {
+    "normalizing": [
+      "radis d'hiver"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "raisin": {
+    "normalizing": [
+      "raisin blanc",
+      "raisin chasselas",
+      "raisin frais",
+      "raisin noir",
+      "raisin rouge"
+    ],
+    "category": "Fruits",
+    "weight": "main"
+  },
+  "raisin sec": {
+    "normalizing": [
+      "raisins secs",
+      "raisin sec blond",
+      "raisin sec sultanine",
+      "raisins secs blonds",
+      "raisins secs blonds moelleux"
+    ],
+    "category": "Fruits secs & Graines",
+    "weight": "flavoring"
+  },
+  "ras el hanout": {
+    "normalizing": [
+      "ras-el-hanout"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "rhubarbe": {
+    "normalizing": [
+      "rhubarbe fraîche",
+      "rhubarbe surgelée"
+    ],
+    "category": "Fruits",
+    "weight": "main"
+  },
+  "rhum": {
+    "normalizing": [
+      "rhum agricole brun",
+      "rhum ambré",
+      "rhum blanc",
+      "rhum brun"
+    ],
+    "category": "Alcools & Vinaigres",
+    "weight": "flavoring"
+  },
+  "riz": {
+    "normalizing": [
+      "riz sauvage",
+      "riz semi-complet",
+      "riz rond demi-complet"
+    ],
+    "category": "Féculents & Céréales",
+    "weight": "base"
+  },
+  "riz risotto": {
+    "normalizing": [
+      "riz arborio",
+      "riz carnaroli",
+      "riz pour risotto"
+    ],
+    "category": "Féculents & Céréales",
+    "weight": "base"
+  },
+  "riz basmati": {
+    "normalizing": [
+      "riz basmati ou thaï",
+      "riz jasmin ou basmati",
+      "riz thaï"
+    ],
+    "category": "Féculents & Céréales",
+    "weight": "base"
+  },
+  "alcool": {
+    "normalizing": [
+      "eau de vie",
+      "gin ou vodka",
+      "amaretto",
+      "vodka",
+      "whisky",
+      "scotch",
+      "armagnac",
+      "calvados",
+      "alcool de poire",
+      "eau de vie de poire",
+      "cognac",
+      "porto",
+      "liqueur",
+      "eau-de-vie",
+      "grand marnier",
+      "grand-marnier"
+    ],
+    "category": "Alcools & Vinaigres",
+    "weight": "flavoring"
+  },
+  "romarin": {
+    "normalizing": [
+      "romarin frais",
+      "romarin haché",
+      "romarin séché",
+      "branche de romarin",
+      "feuilles de romarin"
+    ],
+    "category": "Herbes",
+    "weight": "flavoring"
+  },
+  "roquefort": {
+    "normalizing": [],
+    "category": "Produits laitiers",
+    "weight": "flavoring"
+  },
+  "roquette": {
+    "normalizing": [
+      "roquette fraîche",
+      "roquette ou mâche",
+      "arugula",
+      "pousse de roquette"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "sablé": {
+    "normalizing": [
+      "sablés bretons",
+      "sablé breton",
+      "sablés pur beurre",
+      "sablé anglais",
+      "sablés anglais"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "safran": {
+    "normalizing": [
+      "pistil de safran",
+      "pistils de safran",
+      "spigol"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "sarrasin": {
+    "normalizing": [
+      "sarrasin activé",
+      "millet",
+      "sarrasin décortiqué",
+      "sarrasin grillé",
+      "graine de sarrasin",
+      "kasha",
+      "buckini",
+      "buckinis"
+    ],
+    "category": "Féculents & Céréales",
+    "weight": "base"
+  },
+  "sauce soja": {
+    "normalizing": [
+      "sauce soja claire",
+      "sauce soja salée",
+      "sauce soja sucrée",
+      "sauce tamari",
+      "tamari",
+      "shoyu sucré"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "purée de tomates": {
+    "normalizing": [
+      "sauce tomate",
+      "tomate pelée",
+      "coulis de tomates",
+      "coulis de tomate",
+      "passata",
+      "purée de tomate",
+      "pulpe de tomates"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "saucisse": {
+    "normalizing": [
+      "chair à saucisse"
+    ],
+    "category": "Viandes & Poissons",
+    "weight": "main"
+  },
+  "sauge": {
+    "normalizing": [
+      "sauge fraîche",
+      "feuille de sauge"
+    ],
+    "category": "Herbes",
+    "weight": "flavoring"
+  },
+  "saumon": {
+    "normalizing": [
+      "saumon frais",
+      "darne de saumon",
+      "pavé de saumon",
+      "pavé de saumon frais",
+      "filet de saumon"
+    ],
+    "category": "Viandes & Poissons",
+    "weight": "main"
+  },
+  "saumon fumé": {
+    "normalizing": [
+      "pavé de saumon fumé",
+      "saumon ou truite fumée",
+      "tranches de carpaccio de saumon"
+    ],
+    "category": "Viandes & Poissons",
+    "weight": "main"
+  },
+  "sel": {
+    "normalizing": [
+      "sel fin",
+      "sel épicé",
+      "sel fumé",
+      "sel rose de l'himalaya",
+      "sel de guérande au piment d'espelette",
+      "pink himalayan salt"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "base"
+  },
+  "semoule": {
+    "normalizing": [
+      "semoule fine",
+      "semoule de blé dur",
+      "couscous",
+      "couscous fin",
+      "graines de couscous",
+      "semoule de blé dur fine",
+      "semoule de blé dur moyenne",
+      "semoule de blé fine",
+      "semoule fine de blé dur"
+    ],
+    "category": "Féculents & Céréales",
+    "weight": "base"
+  },
+  "sirop d'érable": {
+    "normalizing": [
+      "sirop d'érable",
+      "érable",
+      "maple syrup"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "flavoring"
+  },
+  "sirop sucrant": {
+    "normalizing": [
+      "sirop d'agave",
+      "sirop de glucose",
+      "glucose",
+      "golden syrup",
+      "sirop de dattes",
+      "sucre de canne liquide"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "skyr": {
+    "normalizing": [
+      "skyr de brebis",
+      "fjord"
+    ],
+    "category": "Produits laitiers",
+    "weight": "base"
+  },
+  "spaghetti": {
+    "normalizing": [
+      "spaghetti complet"
+    ],
+    "category": "Féculents & Céréales",
+    "weight": "base"
+  },
+  "sucre": {
+    "normalizing": [
+      "sucre en grains",
+      "sucre perlé",
+      "sucre blanc",
+      "sucre à confiture",
+      "sucre en poudre",
+      "sucre semoule",
+      "sucre ou miel",
+      "sucre en poudre ou farine"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "cassonade": {
+    "normalizing": [
+      "sucre brun",
+      "cassonnade",
+      "sucre roux",
+      "sucre blond de canne",
+      "sucre de canne",
+      "sucre de canne blond",
+      "sucre blond",
+      "sucre cassonade",
+      "vergeoise",
+      "vergeoise blonde",
+      "vergeoise brune",
+      "sucre vergeoise"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "sucre complet": {
+    "normalizing": [
+      "sucre de canne complet",
+      "sucre muscovado"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "sucre de coco": {
+    "normalizing": [
+      "sucrecoco",
+      "coconut sugar"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "sucre glace": {
+    "normalizing": [
+      "sucre glace décor",
+      "sucre neige décor"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "sucre inverti": {
+    "normalizing": [],
+    "category": "Sucres & Pâtisserie",
+    "weight": "base"
+  },
+  "sucre vanillé": {
+    "normalizing": [],
+    "category": "Sucres & Pâtisserie",
+    "weight": "flavoring"
+  },
+  "tabasco": {
+    "normalizing": [],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "thon": {
+    "normalizing": [],
+    "category": "Viandes & Poissons",
+    "weight": "main"
+  },
+  "thym": {
+    "normalizing": [
+      "thym citron",
+      "branche de thym citron",
+      "thym frais",
+      "thym frais entier",
+      "thym séché",
+      "branche de thym",
+      "branche de thym frais",
+      "sarriette"
+    ],
+    "category": "Herbes",
+    "weight": "flavoring"
+  },
+  "tofu": {
+    "normalizing": [
+      "tofu fumé",
+      "tofu block",
+      "seitan",
+      "steak seitan"
+    ],
+    "category": "Autres",
+    "weight": "main"
+  },
+  "tomate": {
+    "normalizing": [
+      "tomates",
+      "tomate grappe",
+      "tomate noire",
+      "tomate roma",
+      "tomate ancienne",
+      "tomate ananas",
+      "tomate verte",
+      "chair de tomate",
+      "chair de tomates"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "tomate cerise": {
+    "normalizing": [
+      "tomates cerises",
+      "tomates cerises piccolo",
+      "tomates cerise"
+    ],
+    "category": "Légumes",
+    "weight": "main"
+  },
+  "tomate concassée": {
+    "normalizing": [
+      "tomates concassées"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "tomate pelée": {
+    "normalizing": [
+      "tomates pelées",
+      "tomate pelée concassée"
+    ],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "tomate séchée": {
+    "normalizing": [
+      "tomates séchées",
+      "pâte de tomates séchées",
+      "tomate confite"
+    ],
+    "category": "Légumes",
+    "weight": "flavoring"
+  },
+  "vanille": {
+    "normalizing": [
+      "vanille bourbon",
+      "vanille de tahiti",
+      "vanillepoudre",
+      "vanille en poudre",
+      "poudre de vanille",
+      "poudre de vanille de tahiti",
+      "vanilla powder"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "flavoring"
+  },
+  "verveine": {
+    "normalizing": [
+      "verveine citronnelle",
+      "verveine-citronnelle",
+      "feuille de verveine",
+      "feuille de verveine citronnelle",
+      "feuilles de verveine",
+      "feuilles de verveine citronnelle"
+    ],
+    "category": "Herbes",
+    "weight": "flavoring"
+  },
+  "vin blanc": {
+    "normalizing": [
+      "vin blanc sec",
+      "muscat",
+      "vin blanc moelleux",
+      "vin rouge",
+      "vin"
+    ],
+    "category": "Alcools & Vinaigres",
+    "weight": "flavoring"
+  },
+  "vinaigre balsamique": {
+    "normalizing": [
+      "vinaigre balsamique blanc",
+      "vinaigre balsamique blanc ou de cidre",
+      "vinaigre valdespino"
+    ],
+    "category": "Alcools & Vinaigres",
+    "weight": "flavoring"
+  },
+  "vinaigre blanc": {
+    "normalizing": [
+      "vinaigre d'alcool blanc",
+      "vinaigre"
+    ],
+    "category": "Alcools & Vinaigres",
+    "weight": "flavoring"
+  },
+  "vinaigre de cidre": {
+    "normalizing": [
+      "vinaigre de cidre ou de vin"
+    ],
+    "category": "Alcools & Vinaigres",
+    "weight": "flavoring"
+  },
+  "vinaigre de riz": {
+    "normalizing": [
+      "vinaigre de riz ou d'alcool blanc"
+    ],
+    "category": "Alcools & Vinaigres",
+    "weight": "flavoring"
+  },
+  "vinaigre de vin": {
+    "normalizing": [
+      "vinaigre de vin blanc",
+      "vinaigre de vin rouge"
+    ],
+    "category": "Alcools & Vinaigres",
+    "weight": "flavoring"
+  },
+  "vinaigre de xérès": {
+    "normalizing": [
+      "vinaigre de xéres"
+    ],
+    "category": "Alcools & Vinaigres",
+    "weight": "flavoring"
+  },
+  "yaourt": {
+    "normalizing": [
+      "yaourt nature",
+      "yaourts natures",
+      "yahourt"
+    ],
+    "category": "Produits laitiers",
+    "weight": "base"
+  },
+  "yaourt de brebis": {
+    "normalizing": [],
+    "category": "Produits laitiers",
+    "weight": "base"
+  },
+  "yaourt grec": {
+    "normalizing": [
+      "yaourt à la grecque"
+    ],
+    "category": "Produits laitiers",
+    "weight": "base"
+  },
+  "zaatar": {
+    "normalizing": [],
+    "category": "Épices & Condiments",
+    "weight": "flavoring"
+  },
+  "échalote": {
+    "normalizing": [
+      "échalotes"
+    ],
+    "category": "Légumes",
+    "weight": "flavoring"
+  },
+  "éclat de fève de cacao": {
+    "normalizing": [
+      "éclats de fèves de cacao"
+    ],
+    "category": "Sucres & Pâtisserie",
+    "weight": "flavoring"
+  },
+  "éclat de pistache": {
+    "normalizing": [
+      "éclats de pistaches"
+    ],
+    "category": "Fruits secs & Graines",
+    "weight": "flavoring"
+  }
 }

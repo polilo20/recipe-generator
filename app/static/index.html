@@ -223,8 +223,7 @@ function fmt(s) {
     .replace(/\*(.+?)\*/g, '<em>$1</em>');
 }
 
-// Map<display, canonical>
-const selected = new Map();
+const selected = new Set();
 
 async function loadIngredients() {
   const resp = await fetch("/api/ingredients");
@@ -245,10 +244,8 @@ async function loadIngredients() {
     for (const ing of ingredients) {
       const chip = document.createElement("span");
       chip.className = "chip";
-      if (ing.display !== ing.canonical) chip.classList.add("variant");
-      chip.dataset.display = ing.display;
-      chip.dataset.canonical = ing.canonical;
-      chip.textContent = ing.display;
+      chip.dataset.ingredient = ing;
+      chip.textContent = ing;
       chip.addEventListener("click", () => toggleChip(chip));
       chipsDiv.appendChild(chip);
     }
@@ -259,12 +256,12 @@ async function loadIngredients() {
 }
 
 function toggleChip(chip) {
-  const display = chip.dataset.display;
-  if (selected.has(display)) {
-    selected.delete(display);
+  const ing = chip.dataset.ingredient;
+  if (selected.has(ing)) {
+    selected.delete(ing);
     chip.classList.remove("selected");
   } else {
-    selected.set(display, chip.dataset.canonical);
+    selected.add(ing);
     chip.classList.add("selected");
   }
   updateSummary();
@@ -277,7 +274,7 @@ function updateSummary() {
     summary.innerHTML = "Aucun ingrédient sélectionné";
     btn.disabled = true;
   } else {
-    const list = [...selected.keys()].join(", ");
+    const list = [...selected].join(", ");
     summary.innerHTML = "<strong>" + selected.size + " ingrédient" +
       (selected.size > 1 ? "s" : "") + " :</strong> " + list;
     btn.disabled = false;
@@ -314,17 +311,15 @@ document.getElementById("btn-generate").addEventListener("click", async () => {
   resultBox.innerHTML = '<span class="spinner"></span> Génération en cours, veuillez patienter...';
   openModal();
 
-  const ingredients = [...selected.entries()].map(([display, canonical]) => ({display, canonical}));
-
   try {
     const resp = await fetch("/api/generate", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ingredients }),
+      body: JSON.stringify({ ingredients: [...selected] }),
     });
     const data = await resp.json();
-    if (data.error) {
-      resultBox.textContent = "Erreur : " + data.error;
+    if (data.detail) {
+      resultBox.textContent = "Erreur : " + data.detail;
     } else {
       resultBox.innerHTML = renderMarkdown(data.recipe);
     }

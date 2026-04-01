@@ -17,7 +17,7 @@ Generation — feed matched recipes as context to an LLM, ask it to create somet
 New original recipe (in French)
 ```
 
-The dataset was collected by scraping ~10 French food blogs, then processed through an LLM (Mistral) to extract structured data (ingredients, times, tags, etc.).
+The dataset was collected by scraping 3 French food blogs, then processed through an LLM (Mistral) to extract structured data (ingredients, times, tags, etc.).
 
 ## Project structure
 
@@ -74,7 +74,7 @@ MISTRAL_API_KEY=your_key_here
 ### Run
 
 ```bash
-python -m flask --app app.server run
+uvicorn app.server:app --reload
 ```
 
 Then open [http://localhost:5000](http://localhost:5000) in your browser, pick ingredients, and click **Générer**. The recipe is generated on your machine and streamed back to the page — the only external call is to the Mistral API.
