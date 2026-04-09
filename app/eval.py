@@ -12,7 +12,7 @@ Usage:
 from app.rag import load_recipes, load_ingredients_data, retrieve, generate
 
 # ---------------------------------------------------------------------------
-# Test cases — canonical keys from ingredients_map.json
+# Test cases — normalized keys from ingredients_map.json
 # ---------------------------------------------------------------------------
 
 TEST_CASES = [
@@ -39,14 +39,10 @@ def _pluralize(term: str) -> str:
     return " ".join(pluralized)
 
 
-def check_ingredient(term: str, text: str, ingredients_data: dict) -> bool:
-    """Return True if term (or a known variant, including French plural) appears in text."""
+def check_ingredient(term: str, text: str) -> bool:
+    """Return True if term (including French plural) appears in text."""
     text_lower = text.lower()
-    candidates = [term] + ingredients_data.get(term, {}).get("normalizing", [])
-    return any(
-        c.lower() in text_lower or _pluralize(c.lower()) in text_lower
-        for c in candidates
-    )
+    return term.lower() in text_lower or _pluralize(term.lower()) in text_lower
 
 
 def extract_complementary(matched_recipes: list[dict], chosen: list[str]) -> set[str]:
@@ -55,16 +51,16 @@ def extract_complementary(matched_recipes: list[dict], chosen: list[str]) -> set
     return {
         ing
         for r in matched_recipes
-        for ing in r["extracted"].get("ingredients_normalises", [])
+        for ing in r.get("ingredients_normalises", [])
         if ing not in stars
     }
 
 
-def complementary_overlap(text: str, complementary: set[str], ingredients_data: dict) -> float:
+def complementary_overlap(text: str, complementary: set[str]) -> float:
     """Fraction of complementary ingredients that appear in text."""
     if not complementary:
         return 0.0
-    found = sum(1 for ing in complementary if check_ingredient(ing, text, ingredients_data))
+    found = sum(1 for ing in complementary if check_ingredient(ing, text))
     return found / len(complementary)
 
 
@@ -81,11 +77,10 @@ def test_ingredient_presence(recipes: list[dict], ingredients_data: dict) -> Non
         matched = retrieve(recipes, chosen, ingredients_data)
         if not matched:
             print(f"  ⚠ Pas de recettes pour {chosen} — ignoré")
-            total += len(chosen)
             continue
 
         generated = generate(chosen, matched, ingredients_data)
-        case_found = sum(1 for t in chosen if check_ingredient(t, generated, ingredients_data))
+        case_found = sum(1 for t in chosen if check_ingredient(t, generated))
         total += len(chosen)
         found_total += case_found
         ok = case_found == len(chosen)
@@ -120,10 +115,10 @@ def test_context_usage(recipes: list[dict], ingredients_data: dict) -> None:
         label = ", ".join(chosen[:2]) + ("…" if len(chosen) > 2 else "")
         print(
             f"  {label:<38}"
-            f" {complementary_overlap(full, complementary, ingredients_data):>8.1%}"
-            f" {complementary_overlap(recipes_only, complementary, ingredients_data):>6.1%}"
-            f" {complementary_overlap(map_only, complementary, ingredients_data):>6.1%}"
-            f" {complementary_overlap(neither, complementary, ingredients_data):>7.1%}"
+            f" {complementary_overlap(full, complementary):>8.1%}"
+            f" {complementary_overlap(recipes_only, complementary):>6.1%}"
+            f" {complementary_overlap(map_only, complementary):>6.1%}"
+            f" {complementary_overlap(neither, complementary):>7.1%}"
         )
 
 # ---------------------------------------------------------------------------

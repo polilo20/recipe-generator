@@ -69,14 +69,14 @@ def load_ingredients_data(path: Path = INGREDIENTS_MAP_PATH) -> dict:
 
 def score(recipe: dict, ingredients: list[str], ingredients_data: dict) -> float:
     """Compute a score from 0 to 1 reflecting how significantly the recipe overlaps
-    with the chosen ingredients, weighted by ingredient importance.
+    with the chosen ingredients, weighted by ingredient importance (see weight_map).
 
     Recipes with many ingredients are naturally penalized (larger denominator).
     """
     weight_map = {"base": 1, "flavoring": 2, "main": 3}
 
     chosen = set(ingredients)
-    recipe_ingredients = set(recipe["extracted"].get("ingredients_normalises", []))
+    recipe_ingredients = set(recipe.get("ingredients_normalises", []))
 
     overlap = recipe_ingredients & chosen
 
@@ -94,7 +94,7 @@ def score(recipe: dict, ingredients: list[str], ingredients_data: dict) -> float
 def retrieve(recipes: list[dict], chosen_ingredients: list[str], ingredients_data: dict, cutoff: float = 0.3) -> list[dict]:
     """Return all recipes with a score above the cutoff.
 
-    Expects recipes with already-normalized ingredients_normalises (canonical names).
+    Expects recipes with already-normalized ingredients_normalises (normalized names).
     """
     matched = []
     for r in recipes:
@@ -148,22 +148,13 @@ def generate(chosen_ingredients: list[str], matched_recipes: list[dict], ingredi
         for ing in chosen_ingredients
         if ing in ingredients_data
     }
-
+        
     prompt = GENERATION_PROMPT.format(
         star_ingredients=", ".join(chosen_ingredients),
         matched_recipes=_build_recipes_block(matched_recipes),
         ingredients_map=json.dumps(synonyms, ensure_ascii=False),
     )
-    return _call_mistral(prompt, temperature=0.1, max_tokens=2048)
 
-
-def generate_without_context(chosen_ingredients: list[str]) -> str:
-    """Generate a recipe with NO reference recipes (baseline)."""
-    prompt = GENERATION_PROMPT.format(
-        star_ingredients=", ".join(chosen_ingredients),
-        matched_recipes="",
-        ingredients_map="",
-    )
     return _call_mistral(prompt, temperature=0.1, max_tokens=2048)
 
 

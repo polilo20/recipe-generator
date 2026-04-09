@@ -95,23 +95,23 @@ def clean_generic(content: str) -> str:
 
 def clean_recipe(recipe: dict) -> dict:
     """Clean a recipe based on its source."""
-    source = recipe.get('source', '').lower()
-    content = recipe.get('raw_content', '')
+    source = recipe.get("source", "").lower()
+    content = recipe.get("raw_content", "")
 
-    if 'fil du thym' in source:
+    if "fil du thym" in source:
         cleaned = clean_aufilduthym(content)
-    elif 'fournee' in source or 'fournée' in source:
+    elif "fournee" in source or "fournée" in source:
         cleaned = clean_cestmafournee(content)
-    elif 'clem' in source:
+    elif "clem" in source:
         cleaned = clean_clemfoodie(content)
     else:
         cleaned = clean_generic(content)
 
     return {
         **recipe,
-        'cleaned_content': cleaned,
-        'original_length': len(content),
-        'cleaned_length': len(cleaned),
+        "cleaned_content": cleaned,
+        "original_length": len(content),
+        "cleaned_length": len(cleaned),
     }
 
 
@@ -119,29 +119,29 @@ def process_all_recipes(input_dir: Path, output_dir: Path):
     """Process all recipes in the input directory."""
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    stats = {'total': 0, 'processed': 0, 'bytes_saved': 0}
+    stats = {"total": 0, "processed": 0, "bytes_saved": 0}
 
-    for recipe_file in input_dir.glob('*.json'):
-        stats['total'] += 1
+    for recipe_file in input_dir.glob("*.json"):
+        stats["total"] += 1
 
-        with open(recipe_file, 'r', encoding='utf-8') as f:
+        with open(recipe_file, "r", encoding="utf-8") as f:
             recipe = json.load(f)
 
         cleaned = clean_recipe(recipe)
-        stats['bytes_saved'] += cleaned['original_length'] - cleaned['cleaned_length']
-        stats['processed'] += 1
+        stats["bytes_saved"] += cleaned["original_length"] - cleaned["cleaned_length"]
+        stats["processed"] += 1
 
         output_file = output_dir / recipe_file.name
-        with open(output_file, 'w', encoding='utf-8') as f:
+        with open(output_file, "w", encoding="utf-8") as f:
             json.dump(cleaned, f, ensure_ascii=False, indent=2)
 
     return stats
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     base_dir = Path(__file__).parent.parent
-    input_dir = base_dir / 'data' / 'raw'
-    output_dir = base_dir / 'data' / 'processed'
+    input_dir = base_dir / "data" / "raw"
+    output_dir = base_dir / "data" / "processed"
 
     print(f"Processing recipes from {input_dir}")
     stats = process_all_recipes(input_dir, output_dir)
