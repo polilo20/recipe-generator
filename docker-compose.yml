@@ -1,0 +1,9 @@
+services:
+  cwi:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data/recipes_normalized.json:/app/data/recipes_normalized.json
+    env_file:
+      - .env

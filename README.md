@@ -54,14 +54,7 @@ The app runs entirely on your machine — FastAPI starts a local web server and 
 
 ### Requirements
 
-- Python 3.10+
 - A [Mistral API key](https://console.mistral.ai/)
-
-### Install
-
-```bash
-pip install -r requirements.txt
-```
 
 ### Configure
 
@@ -71,13 +64,28 @@ Create a `.env` file at the project root:
 MISTRAL_API_KEY=your_key_here
 ```
 
-### Run
+### Run with Docker (recommended)
+
+- [Docker](https://www.docker.com/) installed and running
 
 ```bash
+docker compose up --build
+```
+
+Then open [http://localhost:8000](http://localhost:8000) in your browser.
+
+### Run locally (without Docker)
+
+- Python 3.10+
+
+```bash
+pip install -r requirements.txt
 uvicorn app.server:app --reload
 ```
 
-Then open [http://localhost:5000](http://localhost:5000) in your browser, pick ingredients, and click **Générer**. The recipe is generated on your machine and streamed back to the page — the only external call is to the Mistral API.
+Then open [http://localhost:8000](http://localhost:8000) in your browser.
+
+Pick ingredients and click **Générer**. The recipe is generated on your machine and streamed back to the page — the only external call is to the Mistral API.
 
 ## RAG pipeline (CLI)
 
