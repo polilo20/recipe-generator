@@ -195,7 +195,10 @@ def main():
         print(f"  - {r['extracted'].get('titre', r.get('original_title', '?'))}")
 
     if not matched:
-        print("Aucune recette pertinente trouvée pour ces ingrédients.")
+        print(
+            "Aucune recette pertinente trouvée pour ces ingrédients. Essayez d'en sélectionner d'autres. \n"
+            "Plus vous en sélectionnez, notamment des légumes, plus les chances d'avoir des matchs pertinents augmentent."
+        )
         return
 
     # --- Show all recipes fed to the LLM ---
