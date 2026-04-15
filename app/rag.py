@@ -33,7 +33,8 @@ Seconde étape : prends connaissance des recettes suivantes. La première recett
 {matched_recipes}
 
 Troisième étape : combine ce que tu as appris lors des deux dernières étapes, et uniquement cela, pour proposer une nouvelle recette. 
-Cette recette doit absolument citer tous ces ingrédients : {star_ingredients}. Tu ne dois utiliser aucune connaissance hors de ce qui a déjà été fourni.
+Cette recette doit absolument citer tous ces ingrédients : {star_ingredients}. N'hésite pas à aussi utiliser les autres ingrédients mentionnés dans les recettes fournies, 
+ils sont sûrement pertinents pour faire un bon plat, dans l'esprit du corpus. Tu ne dois utiliser aucune connaissance hors de ce qui a déjà été fourni.
 Relis simplement ta recette pour vérifier qu'elle est cohérente pour un chef cuisinier qui maîtrise les techniques de base.
 
 Notamment n'oublie pas :
