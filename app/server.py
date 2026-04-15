@@ -13,6 +13,9 @@ STATIC_DIR = Path(__file__).resolve().parent / "static"
 
 app = FastAPI()
 
+recipes = load_recipes()
+ingredients_data = load_ingredients_data()
+
 
 # ---------------------------------------------------------------------------
 # Routes
@@ -26,8 +29,6 @@ def index():
 @app.get("/api/ingredients")
 def api_ingredients():
     """Return ingredients grouped by category, sorted alphabetically within each group."""
-    ingredients_data = load_ingredients_data()
-
     grouped: dict[str, list[str]] = {}
     for key, data in ingredients_data.items():
         grouped.setdefault(data["category"], []).append(key)
@@ -49,8 +50,6 @@ def api_generate(body: GenerateRequest):
         raise HTTPException(status_code=400, detail="Aucun ingrédient sélectionné")
 
     ingredients = list(dict.fromkeys(body.ingredients))
-    ingredients_data = load_ingredients_data()
-    recipes = load_recipes()
     matched = retrieve(recipes, ingredients, ingredients_data)
 
     if not matched:

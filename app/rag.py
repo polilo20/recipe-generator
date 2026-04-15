@@ -54,7 +54,18 @@ Propose la recette :
 # ---------------------------------------------------------------------------
 
 def load_recipes(path: Path = DATA_PATH) -> list[dict]:
-    """Load recipe data from the normalized JSON."""
+    """Load recipe data from the normalized JSON.
+
+    In production (GCS_BUCKET env var set), downloads from Google Cloud Storage.
+    Locally, reads from the filesystem path (mounted via docker-compose).
+    """
+    bucket_name = os.environ.get("GCS_BUCKET")
+    if bucket_name:
+        import google.cloud.storage as storage
+        client = storage.Client()
+        blob = client.bucket(bucket_name).blob("recipes_normalized.json")
+        return json.loads(blob.download_as_text(encoding="utf-8"))
+
     with open(path, encoding="utf-8") as f:
         return json.load(f)
 
@@ -92,7 +103,7 @@ def score(recipe: dict, ingredients: list[str], ingredients_data: dict) -> float
     return overlap_weight / total_recipe_weight
 
 
-def retrieve(recipes: list[dict], chosen_ingredients: list[str], ingredients_data: dict, cutoff: float = 0.3) -> list[dict]:
+def retrieve(recipes: list[dict], chosen_ingredients: list[str], ingredients_data: dict, cutoff: float = 0.1) -> list[dict]:
     """Return all recipes with a score above the cutoff.
 
     Expects recipes with already-normalized ingredients_normalises (normalized names).
