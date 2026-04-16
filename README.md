@@ -2,6 +2,8 @@
 
 AI-powered French recipe generator. Pick ingredients from a web UI and get an original recipe generated from a curated dataset of French food blog recipes, mostly vegetarian and mediterranean style.
 
+**Live app:** https://cwi-app-1039654689601.europe-west1.run.app
+
 ## How it works
 
 ```
@@ -26,7 +28,7 @@ cwi/
 ├── app/                        # FastAPI web application
 │   ├── server.py               # API routes
 │   ├── rag.py                  # Retrieval + generation pipeline
-|   ├── eval.py                 # Basic evaluation of RAG pipeline
+│   ├── eval.py                 # Basic evaluation of RAG pipeline
 │   └── static/index.html       # Web UI
 ├── scraping/                   # Web scrapers (one per blog)
 │   ├── scraper.py              # Orchestrator
@@ -43,14 +45,12 @@ cwi/
 │   ├── raw/                    # Raw scraped pages
 │   ├── processed/              # Cleaned content
 │   ├── extracted/              # LLM-extracted structured recipes
-│   └── recipes_normalized.json # Final dataset loaded by the app (output of nor)
+│   └── recipes_normalized.json # Final dataset loaded by the app
 ├── requirements.txt            # App dependencies
 └── .env                        # API keys (never committed)
 ```
 
-## Getting started
-
-The app runs entirely on your machine — FastAPI starts a local web server and serves both the API and the UI. No hosting required.
+## Run locally
 
 ### Requirements
 
@@ -62,6 +62,7 @@ Create a `.env` file at the project root:
 
 ```
 MISTRAL_API_KEY=your_key_here
+API_KEY=your_api_key_here        # any string you choose — protects the /api routes from bot abuse
 ```
 
 ### Run with Docker (recommended)
@@ -85,7 +86,7 @@ uvicorn app.server:app --reload
 
 Then open [http://localhost:8000](http://localhost:8000) in your browser.
 
-Pick ingredients and click **Générer**. The recipe is generated on your machine and streamed back to the page — the only external call is to the Mistral API.
+Pick ingredients and click **Générer**. The only external call is to the Mistral API.
 
 ## RAG pipeline (CLI)
 

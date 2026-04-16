@@ -8,12 +8,24 @@ RAG pipeline for recipe generation.
 
 import argparse
 import json
+import logging
 import os
+import time
 from pathlib import Path
 
 import requests
 from dotenv import load_dotenv
 load_dotenv()
+
+logger = logging.getLogger(__name__)
+
+
+class MistralUnavailableError(Exception):
+    """Raised when the Mistral API is unreachable or returns a server error."""
+
+
+class MistralQuotaError(Exception):
+    """Raised when the Mistral API quota or payment limit is exceeded."""
 
 MISTRAL_API_URL = "https://api.mistral.ai/v1/chat/completions"
 MISTRAL_API_MODEL = "mistral-small-latest"
@@ -103,7 +115,7 @@ def score(recipe: dict, ingredients: list[str], ingredients_data: dict) -> float
     return overlap_weight / total_recipe_weight
 
 
-def retrieve(recipes: list[dict], chosen_ingredients: list[str], ingredients_data: dict, cutoff: float = 0.1) -> list[dict]:
+def retrieve(recipes: list[dict], chosen_ingredients: list[str], ingredients_data: dict, cutoff: float = 0.3) -> list[dict]:
     """Return all recipes with a score above the cutoff.
 
     Expects recipes with already-normalized ingredients_normalises (normalized names).
@@ -138,16 +150,30 @@ def _call_mistral(prompt: str, temperature: float = 0.1, max_tokens: int = 2048)
     if not api_key:
         raise RuntimeError("MISTRAL_API_KEY environment variable not set")
 
-    resp = requests.post(MISTRAL_API_URL, json={
-        "model": MISTRAL_API_MODEL,
-        "messages": [{"role": "user", "content": prompt}],
-        "temperature": temperature,
-        "max_tokens": max_tokens,
-    }, headers={
-        "Authorization": f"Bearer {api_key}",
-        "Content-Type": "application/json",
-    }, timeout=120)
-    resp.raise_for_status()
+    try:
+        resp = requests.post(MISTRAL_API_URL, json={
+            "model": MISTRAL_API_MODEL,
+            "messages": [{"role": "user", "content": prompt}],
+            "temperature": temperature,
+            "max_tokens": max_tokens,
+        }, headers={
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json",
+        }, timeout=120)
+        resp.raise_for_status()
+    except requests.exceptions.ConnectionError as e:
+        logger.error("Mistral connection error: %s", e)
+        raise MistralUnavailableError("Le service Mistral est inaccessible. Veuillez réessayer plus tard.")
+    except requests.exceptions.Timeout as e:
+        logger.error("Mistral timeout: %s", e)
+        raise MistralUnavailableError("Le service Mistral n'a pas répondu à temps. Veuillez réessayer plus tard.")
+    except requests.exceptions.HTTPError as e:
+        status = e.response.status_code
+        logger.error("Mistral HTTP error %d: %s", status, e.response.text[:200])
+        if status in (402, 429):
+            raise MistralQuotaError("Le quota Mistral est dépassé. La génération de recettes est temporairement indisponible.")
+        raise MistralUnavailableError(f"Le service Mistral a retourné une erreur ({status}). Veuillez réessayer plus tard.")
+
     return resp.json()["choices"][0]["message"]["content"]
 
 
@@ -160,14 +186,20 @@ def generate(chosen_ingredients: list[str], matched_recipes: list[dict], ingredi
         for ing in chosen_ingredients
         if ing in ingredients_data
     }
-        
+
     prompt = GENERATION_PROMPT.format(
         star_ingredients=", ".join(chosen_ingredients),
         matched_recipes=_build_recipes_block(matched_recipes),
         ingredients_map=json.dumps(synonyms, ensure_ascii=False),
     )
 
-    return _call_mistral(prompt, temperature=0.1, max_tokens=2048)
+    t0 = time.monotonic()
+    result = _call_mistral(prompt, temperature=0.1, max_tokens=2048)
+    latency_ms = int((time.monotonic() - t0) * 1000)
+    logger.info("Generation latency: %d ms", latency_ms)
+    logger.info("Generated recipe:\n%s", result)
+
+    return result
 
 
 # ---------------------------------------------------------------------------

@@ -180,6 +180,8 @@
 </div>
 
 <script>
+const API_KEY = "__API_KEY_PLACEHOLDER__";
+
 // Minimal markdown renderer: handles headers, bold, italic, lists
 function renderMarkdown(text) {
   const lines = text.split('\n');
@@ -226,7 +228,9 @@ function fmt(s) {
 const selected = new Set();
 
 async function loadIngredients() {
-  const resp = await fetch("/api/ingredients");
+  const resp = await fetch("/api/ingredients", {
+    headers: API_KEY ? { "X-API-Key": API_KEY } : {},
+  });
   const data = await resp.json();
   const container = document.getElementById("categories");
 
@@ -314,7 +318,10 @@ document.getElementById("btn-generate").addEventListener("click", async () => {
   try {
     const resp = await fetch("/api/generate", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        ...(API_KEY ? { "X-API-Key": API_KEY } : {}),
+      },
       body: JSON.stringify({ ingredients: [...selected] }),
     });
     const data = await resp.json();
