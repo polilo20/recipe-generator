@@ -13,6 +13,7 @@ from typing import Annotated
 from app.rag import (
     MistralQuotaError,
     MistralUnavailableError,
+    NoRecipesFoundError,
     generate,
     load_ingredients_data,
     load_recipes,
@@ -94,7 +95,7 @@ def api_generate(body: GenerateRequest, x_api_key: Annotated[str | None, Header(
 
     if not matched:
         logger.info("No matching recipes for ingredients: %s", ingredients)
-        raise HTTPException(status_code=404, detail="Aucune recette trouvée pour ces ingrédients.")
+        raise HTTPException(status_code=404, detail=str(NoRecipesFoundError()))
 
     titles = [r["extracted"].get("titre", r.get("original_title", "?")) for r in matched]
     logger.info("Matched recipes (%d): %s", len(matched), titles)

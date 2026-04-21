@@ -27,6 +27,15 @@ class MistralUnavailableError(Exception):
 class MistralQuotaError(Exception):
     """Raised when the Mistral API quota or payment limit is exceeded."""
 
+
+class NoRecipesFoundError(Exception):
+    """Raised when no recipes match the chosen ingredients."""
+    def __init__(self):
+        super().__init__(
+            "Aucune recette pertinente trouvée pour ces ingrédients. Essayez d'en sélectionner d'autres.\n"
+            "Plus vous en sélectionnez, notamment des légumes, plus les chances d'avoir des matchs pertinents augmentent."
+        )
+
 MISTRAL_API_URL = "https://api.mistral.ai/v1/chat/completions"
 MISTRAL_API_MODEL = "mistral-small-latest"
 
@@ -237,11 +246,7 @@ def main():
         print(f"  - {r['extracted'].get('titre', r.get('original_title', '?'))}")
 
     if not matched:
-        print(
-            "Aucune recette pertinente trouvée pour ces ingrédients. Essayez d'en sélectionner d'autres. \n"
-            "Plus vous en sélectionnez, notamment des légumes, plus les chances d'avoir des matchs pertinents augmentent."
-        )
-        return
+        raise NoRecipesFoundError()
 
     # --- Show all recipes fed to the LLM ---
     print(f"\n{'='*60}")
