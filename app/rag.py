@@ -115,8 +115,8 @@ def score(recipe: dict, ingredients: list[str], ingredients_data: dict) -> float
     return overlap_weight / total_recipe_weight
 
 
-def retrieve(recipes: list[dict], chosen_ingredients: list[str], ingredients_data: dict, cutoff: float = 0.3) -> list[dict]:
-    """Return all recipes with a score above the cutoff.
+def retrieve(recipes: list[dict], chosen_ingredients: list[str], ingredients_data: dict, cutoff: float = 0.3, max_results: int = 5) -> list[dict]:
+    """Return the top-scoring recipes with a score above the cutoff, capped at max_results.
 
     Expects recipes with already-normalized ingredients_normalises (normalized names).
     """
@@ -127,18 +127,17 @@ def retrieve(recipes: list[dict], chosen_ingredients: list[str], ingredients_dat
             matched.append((s, r))
 
     matched.sort(key=lambda x: x[0], reverse=True)
-    return [r for _, r in matched]
+    return [r for _, r in matched[:max_results]]
 
 
 # ---------------------------------------------------------------------------
 # Generation
 # ---------------------------------------------------------------------------
 
-def _build_recipes_block(recipes: list[dict], max_recipes: int = 5) -> str:
-    """Format recipe cleaned_content for the prompt (kept for reference/baseline)."""
-    # Should ingredients be outlined here ?
+def _build_recipes_block(recipes: list[dict]) -> str:
+    """Format recipe cleaned_content for the prompt."""
     parts = []
-    for i, r in enumerate(recipes[:max_recipes], 1):
+    for i, r in enumerate(recipes, 1):
         title = r["extracted"].get("titre", r.get("original_title", "Sans titre"))
         parts.append(f"### Recette {i} : {title}\n{r['cleaned_content']}\n")
     return "\n".join(parts)
