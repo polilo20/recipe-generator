@@ -111,16 +111,20 @@ def score(recipe: dict, ingredients: list[str], ingredients_data: dict) -> float
     chosen = set(ingredients)
     recipe_ingredients = set(recipe.get("ingredients_normalises", []))
 
-    overlap = recipe_ingredients & chosen
+    overlap = recipe_ingredients & chosen # ingredients both in the recipe and chosen by the user
 
     def ingredient_weight(ing: str) -> int:
-        return weight_map.get(ingredients_data.get(ing, {}).get("weight", "base"), 1)
+        return weight_map.get(ingredients_data.get(ing, {}).get("weight", "base"), 1) # default to "base" weight if ingredient unknown
 
     total_recipe_weight = sum(ingredient_weight(ing) for ing in recipe_ingredients)
     if total_recipe_weight == 0:
         return 0.0
 
     overlap_weight = sum(ingredient_weight(ing) for ing in overlap)
+
+    # Recipes with few ingredients score higher for the same overlap.                                                                                                          
+    # We keep a low cutoff to maximise matches, accepting that the LLM                                                                                                         
+    # may fall back to general knowledge when context is weakly relevant. 
     return overlap_weight / total_recipe_weight
 
 
@@ -135,6 +139,7 @@ def retrieve(recipes: list[dict], chosen_ingredients: list[str], ingredients_dat
         if s >= cutoff:
             matched.append((s, r))
 
+    # Sort descending — the prompt tells the LLM the first recipe is the most relevant.
     matched.sort(key=lambda x: x[0], reverse=True)
     return [r for _, r in matched[:max_results]]
 
@@ -220,7 +225,8 @@ def main():
 
     recipes = load_recipes()
     ingredients_data = load_ingredients_data()
-    display_list = list(ingredients_data.keys())
+    # normalized ingredient names are kept for display, for consistency in retrieval and clarity for user
+    display_list = list(ingredients_data.keys()) 
 
     print("=== Ingrédients disponibles ===")
     for i, ing in enumerate(display_list, 1):
